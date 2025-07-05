@@ -5,6 +5,7 @@ import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { ArrowRight, Phone, Mail } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function CTA() {
   const ref = useRef(null)
@@ -39,7 +40,7 @@ export default function CTA() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-8">
-              <motion.button
+              <Link href="/contact"><motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="group bg-gradient-to-r from-cyan to-blue hover:from-blue hover:to-cyan text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 card-glow"
@@ -47,14 +48,16 @@ export default function CTA() {
                 <span>Get Free Consultation</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </motion.button>
-
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="glass-effect border-2 border-white text-white hover:bg-white hover:text-darkBlue px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300"
-              >
-                View Our Work
-              </motion.button>
+              </Link>
+              <Link href="/portfolio">
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="glass-effect border-2 border-white text-white hover:bg-white hover:text-darkBlue px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300"
+                >
+                  View Our Work
+                </motion.button>
+              </Link>
             </div>
 
             {/* Contact Options */}
@@ -68,7 +71,7 @@ export default function CTA() {
                 <Phone className="w-5 h-5 text-cyan" />
                 <div className="flex flex-col space-y-1">
                   <span>6370611812</span>
-                  <span>8249806562</span>
+                  {/* <span>8249806562</span> */}
                 </div>
               </div>
               <div className="flex items-center space-x-3 text-white/80">

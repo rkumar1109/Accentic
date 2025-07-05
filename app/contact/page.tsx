@@ -27,24 +27,71 @@ export default function Contact() {
     }))
   }
 
+  // const handleSubmit = 
+  // async (e: React.FormEvent) => {
+  //   e.preventDefault()
+  //   setIsSubmitting(true)
+
+
+  //   // Simulate form submission
+  //   await new Promise((resolve) => setTimeout(resolve, 2000))
+
+  //   console.log("Form submitted:", formData)
+  //   setIsSubmitting(false)
+
+  //   // Reset form
+  //   setFormData({
+  //     name: "",
+  //     email: "",
+  //     phone: "",
+  //     message: "",
+  //   })
+  // }
+
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-
-    console.log("Form submitted:", formData)
-    setIsSubmitting(false)
-
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    })
-  }
+    e.preventDefault();
+    setIsSubmitting(true);
+  
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "e9476674-d0cf-4b13-b131-a4b399042487", // 🔐 Replace with your Web3Forms access key
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        }),
+      });
+  
+      const result = await response.json();
+  
+      if (result.success) {
+        console.log("Success:", result);
+        alert("Message sent successfully!");
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        console.error("Error:", result);
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Network error. Please try again later.");
+    }
+  
+    setIsSubmitting(false);
+  };
+  
 
   return (
     <motion.div
@@ -122,7 +169,7 @@ export default function Contact() {
                     <h3 className="font-semibold text-[#2E2E2E]">Call Us</h3>
                     <div className="flex flex-col space-y-1">
                       <p className="text-[#2E2E2E]/70">6370611812</p>
-                      <p className="text-[#2E2E2E]/70">8249806562</p>
+                      {/* <p className="text-[#2E2E2E]/70">8249806562</p> */}
                     </div>
                   </div>
                 </motion.div>
@@ -193,7 +240,7 @@ export default function Contact() {
 
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
                   <label htmlFor="email" className="block text-sm font-medium text-[#2E2E2E] mb-2">
-                    Email Address *
+                    Email Address
                   </label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#C38E70]" />
@@ -203,7 +250,7 @@ export default function Contact() {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      required
+                      // required
                       className="w-full pl-12 pr-4 py-3 bg-white border border-[#C38E70]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C38E70] focus:border-transparent transition-all duration-200"
                       placeholder="Enter your email address"
                     />
@@ -212,7 +259,7 @@ export default function Contact() {
 
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
                   <label htmlFor="phone" className="block text-sm font-medium text-[#2E2E2E] mb-2">
-                    Phone Number
+                    Phone Number *
                   </label>
                   <div className="relative">
                     <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#C38E70]" />
@@ -220,6 +267,7 @@ export default function Contact() {
                       type="tel"
                       id="phone"
                       name="phone"
+                      required
                       value={formData.phone}
                       onChange={handleInputChange}
                       className="w-full pl-12 pr-4 py-3 bg-white border border-[#C38E70]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C38E70] focus:border-transparent transition-all duration-200"
@@ -230,7 +278,7 @@ export default function Contact() {
 
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
                   <label htmlFor="message" className="block text-sm font-medium text-[#2E2E2E] mb-2">
-                    Message *
+                    Message (Optional)
                   </label>
                   <div className="relative">
                     <MessageSquare className="absolute left-3 top-4 w-5 h-5 text-[#C38E70]" />
@@ -239,7 +287,7 @@ export default function Contact() {
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      required
+                      // required
                       rows={5}
                       className="w-full pl-12 pr-4 py-3 bg-white border border-[#C38E70]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C38E70] focus:border-transparent transition-all duration-200 resize-none"
                       placeholder="Tell us about your project..."

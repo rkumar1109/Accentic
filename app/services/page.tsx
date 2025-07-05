@@ -182,13 +182,13 @@ export default function Services() {
               Let's discuss your project and create something amazing together. Get a free consultation and custom quote
               today.
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="gradient-bg text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Get Free Consultation
-            </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="gradient-bg text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Get Free Consultation
+              </motion.button>
           </motion.div>
         </div>
       </section>

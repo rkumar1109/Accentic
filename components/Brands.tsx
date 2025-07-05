@@ -33,7 +33,6 @@ export default function Brands() {
             We're proud to partner with innovative companies worldwide
           </p>
         </motion.div>
-
         <div className="relative overflow-hidden">
           <motion.div
             animate={{ x: [0, -100 * brands.length] }}
@@ -49,7 +48,8 @@ export default function Brands() {
               <motion.div
                 key={`${brand.name}-${index}`}
                 whileHover={{ scale: 1.1 }}
-                className="flex-shrink-0 w-32 h-16 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-[#C38E70]/10"
+                // className="flex-shrink-0 w-32 h-16 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-[#C38E70]/10"
+                className="flex-shrink-0 w-48 h-32 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-[#C38E70]/10"
               >
                 <img
                   src={brand.logo || "/placeholder.svg"}

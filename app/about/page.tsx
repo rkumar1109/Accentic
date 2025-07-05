@@ -13,29 +13,29 @@ const team = [
 		position: "CEO & Founder",
 		bio: "Visionary leader with 10+ years in digital strategy and business development.",
 		image: "/placeholder.svg?height=300&width=300",
-		social: { linkedin: "#", twitter: "#" },
+		social: { linkedin: "#", twitter: "#", github: "#" },
 	},
-	{
-		name: "Michael Chen",
-		position: "CTO",
-		bio: "Full-stack developer and tech innovator passionate about cutting-edge solutions.",
-		image: "/placeholder.svg?height=300&width=300",
-		social: { linkedin: "#", github: "#" },
-	},
-	{
-		name: "Emily Rodriguez",
-		position: "Creative Director",
-		bio: "Award-winning designer with expertise in brand identity and user experience.",
-		image: "/placeholder.svg?height=300&width=300",
-		social: { linkedin: "#", twitter: "#" },
-	},
-	{
-		name: "David Thompson",
-		position: "Marketing Director",
-		bio: "Data-driven marketer specializing in growth strategies and digital campaigns.",
-		image: "/placeholder.svg?height=300&width=300",
-		social: { linkedin: "#", twitter: "#" },
-	},
+	// {
+	// 	name: "Michael Chen",
+	// 	position: "CTO",
+	// 	bio: "Full-stack developer and tech innovator passionate about cutting-edge solutions.",
+	// 	image: "/placeholder.svg?height=300&width=300",
+	// 	social: { linkedin: "#", github: "#" },
+	// },
+	// {
+	// 	name: "Emily Rodriguez",
+	// 	position: "Creative Director",
+	// 	bio: "Award-winning designer with expertise in brand identity and user experience.",
+	// 	image: "/placeholder.svg?height=300&width=300",
+	// 	social: { linkedin: "#", twitter: "#" },
+	// },
+	// {
+	// 	name: "David Thompson",
+	// 	position: "Marketing Director",
+	// 	bio: "Data-driven marketer specializing in growth strategies and digital campaigns.",
+	// 	image: "/placeholder.svg?height=300&width=300",
+	// 	social: { linkedin: "#", twitter: "#" },
+	// },
 ]
 
 const values = [
@@ -327,7 +327,8 @@ export default function About() {
 								transition={{ duration: 0.6, delay: index * 0.1 }}
 								viewport={{ once: true }}
 								whileHover={{ scale: 1.02, y: -5 }}
-								className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-indigo/10"
+								// className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-indigo/10"
+								className="group bg-white w-[350px] md:w-[600px] mx-auto ml-80 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-indigo/10"
 							>
 								<div className="relative h-64 overflow-hidden">
 									<Image
