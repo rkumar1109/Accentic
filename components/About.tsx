@@ -5,6 +5,7 @@ import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { Award, Users, Target, Zap } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 const highlights = [
   {
@@ -90,7 +91,7 @@ export default function About() {
                 </motion.div>
               ))}
             </div>
-
+            <Link href="/about">
             <motion.button
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -101,6 +102,7 @@ export default function About() {
             >
               Learn More About Us
             </motion.button>
+            </Link>
           </motion.div>
 
           {/* Image and Highlights */}
