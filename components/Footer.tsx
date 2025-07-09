@@ -157,7 +157,7 @@ export default function Footer() {
           viewport={{ once: true }}
           className="border-t border-gray-700 pt-8 text-center"
         >
-          <p className="text-gray-400">© 2024 Accentic Digital Solutions. All rights reserved.</p>
+          <p className="text-gray-400">© 2025 Accentic Digital Solutions. All rights reserved.</p>
         </motion.div>
       </div>
     </motion.footer>

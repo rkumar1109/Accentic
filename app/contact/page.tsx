@@ -60,20 +60,20 @@ export default function Contact() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "e9476674-d0cf-4b13-b131-a4b399042487", // 🔐 Replace with your Web3Forms access key
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
           message: formData.message,
         }),
       });
+      console.log(process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY);
   
       const result = await response.json();
   
       if (result.success) {
         console.log("Success:", result);
         alert("Message sent successfully!");
-        // Reset form
         setFormData({
           name: "",
           email: "",
