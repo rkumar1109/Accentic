@@ -1,41 +1,48 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
-import { Award, Users, Target, Zap } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { Award, Users, Target, Zap } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const highlights = [
   {
     icon: Award,
     title: "Award-Winning",
-    description: "Recognized for excellence in digital innovation and creative solutions",
+    description:
+      "Recognized for excellence in digital innovation and creative solutions",
   },
   {
     icon: Users,
     title: "Expert Team",
-    description: "50+ skilled professionals with diverse expertise and proven track records",
+    description:
+      "50+ skilled professionals with diverse expertise and proven track records",
   },
   {
     icon: Target,
     title: "Results-Driven",
-    description: "Data-focused approach ensuring measurable ROI and business growth",
+    description:
+      "Data-focused approach ensuring measurable ROI and business growth",
   },
   {
     icon: Zap,
     title: "Fast Delivery",
-    description: "Agile methodology delivering projects on time without compromising quality",
+    description:
+      "Agile methodology delivering projects on time without compromising quality",
   },
-]
+];
 
 export default function About() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-br from-white to-lightBlue/30 relative overflow-hidden">
+    <section
+      ref={ref}
+      className="py-20 bg-gradient-to-br from-white to-lightBlue/30 relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-r from-indigo to-purple rounded-full blur-3xl"></div>
@@ -65,9 +72,11 @@ export default function About() {
             </h2>
 
             <p className="text-lg text-darkBlue/70 mb-8 leading-relaxed">
-              Founded in 2018, Accentic Digital Solutions has been at the forefront of digital innovation, helping
-              businesses of all sizes achieve their goals through strategic digital transformation. Our passion for
-              creativity combined with technical expertise makes us the perfect partner for your digital journey.
+              Founded in 2018, Accentic Digital Solutions has been at the
+              forefront of digital innovation, helping businesses of all sizes
+              achieve their goals through strategic digital transformation. Our
+              passion for creativity combined with technical expertise makes us
+              the perfect partner for your digital journey.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -82,7 +91,9 @@ export default function About() {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                  animate={
+                    isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
+                  }
                   transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                   className="flex items-center space-x-3"
                 >
@@ -92,16 +103,18 @@ export default function About() {
               ))}
             </div>
             <Link href="/about">
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="gradient-bg text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 card-glow"
-            >
-              Learn More About Us
-            </motion.button>
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
+                transition={{ duration: 0.6, delay: 0.8 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="gradient-bg text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 card-glow"
+              >
+                Learn More About Us
+              </motion.button>
             </Link>
           </motion.div>
 
@@ -131,7 +144,9 @@ export default function About() {
                 <motion.div
                   key={highlight.title}
                   initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                  animate={
+                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+                  }
                   transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                   whileHover={{ scale: 1.05, y: -5 }}
                   className="glass-effect p-6 rounded-2xl shadow-lg border border-indigo/10 hover:shadow-xl transition-all duration-300 card-glow"
@@ -142,8 +157,12 @@ export default function About() {
                   >
                     <highlight.icon className="w-6 h-6 text-white" />
                   </motion.div>
-                  <h3 className="text-lg font-semibold text-darkBlue mb-2">{highlight.title}</h3>
-                  <p className="text-sm text-darkBlue/70 leading-relaxed">{highlight.description}</p>
+                  <h3 className="text-lg font-semibold text-darkBlue mb-2">
+                    {highlight.title}
+                  </h3>
+                  <p className="text-sm text-darkBlue/70 leading-relaxed">
+                    {highlight.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -151,5 +170,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }

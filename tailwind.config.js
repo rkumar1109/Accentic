@@ -1,9 +1,13 @@
 /** @type {import('tailwindcss').Config} */
-const defaultConfig = require("tailwindcss/defaultConfig")
+const defaultConfig = require("tailwindcss/defaultConfig");
 
 module.exports = {
   darkMode: ["class"],
-  content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}", "*.{js,ts,jsx,tsx,mdx}"],
+  content: [
+    "app/**/*.{ts,tsx}",
+    "components/**/*.{ts,tsx}",
+    "*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     ...defaultConfig.theme,
     extend: {
@@ -61,49 +65,50 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       animation: {
         // ...existing animations...
-        'blob-slow': 'blob 25s infinite cubic-bezier(0.4, 0.1, 0.3, 1)',
-        'float': 'float 12s infinite ease-in-out',
-        'pulse-slow': 'pulse-slow 8s infinite ease-in-out',
+        "blob-slow": "blob 25s infinite cubic-bezier(0.4, 0.1, 0.3, 1)",
+        float: "float 12s infinite ease-in-out",
+        "pulse-slow": "pulse-slow 8s infinite ease-in-out",
       },
       keyframes: {
         // ...existing keyframes...
-        'blob-slow': {
-          '0%': {
-            transform: 'translate(0px, 0px) scale(1)',
+        "blob-slow": {
+          "0%": {
+            transform: "translate(0px, 0px) scale(1)",
           },
-          '33%': {
-            transform: 'translate(30px, -30px) scale(1.05)',
+          "33%": {
+            transform: "translate(30px, -30px) scale(1.05)",
           },
-          '66%': {
-            transform: 'translate(-20px, 20px) scale(0.98)',
+          "66%": {
+            transform: "translate(-20px, 20px) scale(0.98)",
           },
-          '100%': {
-            transform: 'translate(0px, 0px) scale(1)',
-          },
-        },
-        'float': {
-          '0%': {
-            transform: 'translateY(0px) translateX(0px)',
-          },
-          '50%': {
-            transform: 'translateY(-15px) translateX(10px)',
-          },
-          '100%': {
-            transform: 'translateY(0px) translateX(0px)',
+          "100%": {
+            transform: "translate(0px, 0px) scale(1)",
           },
         },
-        'pulse-slow': {
-          '0%': {
+        float: {
+          "0%": {
+            transform: "translateY(0px) translateX(0px)",
+          },
+          "50%": {
+            transform: "translateY(-15px) translateX(10px)",
+          },
+          "100%": {
+            transform: "translateY(0px) translateX(0px)",
+          },
+        },
+        "pulse-slow": {
+          "0%": {
             opacity: 0.2,
           },
-          '50%': {
+          "50%": {
             opacity: 0.4,
           },
-          '100%': {
+          "100%": {
             opacity: 0.2,
           },
         },
@@ -112,17 +117,18 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss-animate"),
-    function({ addUtilities }) {
+    function ({ addUtilities }) {
       const newUtilities = {
         // ...existing utilities...
-        '.animation-delay-5000': {
-          'animation-delay': '5s',
+        ".animation-delay-5000": {
+          "animation-delay": "5s",
         },
-        '.bg-noise': {
-          'background-image': 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
-        }
+        ".bg-noise": {
+          "background-image":
+            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
+        },
       };
       addUtilities(newUtilities);
     },
   ],
-}
+};

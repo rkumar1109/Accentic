@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+
 # Accentic_RJ
+
 =======
+
 # Accentic Digital Solutions Website
 
 A modern, responsive website for a digital marketing agency built with Next.js, Tailwind CSS, and Framer Motion.
@@ -42,12 +45,14 @@ A modern, responsive website for a digital marketing agency built with Next.js, 
 ### Installation
 
 1. Clone the repository
+
 ```bash
 git clone https://github.com/your-username/accentic-digital.git
 cd accentic-digital
 ```
 
 2. Install dependencies
+
 ```bash
 pnpm install
 # or
@@ -55,6 +60,7 @@ npm install
 ```
 
 3. Run the development server
+
 ```bash
 pnpm dev
 # or
@@ -122,4 +128,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Contributions, issues and feature requests are welcome!
 
->>>>>>> cb021bf (First commit)
+> > > > > > > cb021bf (First commit)

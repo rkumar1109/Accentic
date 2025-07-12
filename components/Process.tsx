@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
-import { Search, Lightbulb, Code, Rocket } from "lucide-react"
-import Image from "next/image"
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { Search, Lightbulb, Code, Rocket } from "lucide-react";
+import Image from "next/image";
 
 const steps = [
   {
@@ -13,15 +13,26 @@ const steps = [
     title: "Discovery & Audit",
     description:
       "We analyze your current digital presence, identify opportunities, and understand your target audience and business goals.",
-    details: ["Digital Audit", "Competitor Analysis", "Target Audience Research", "Goal Setting"],
+    details: [
+      "Digital Audit",
+      "Competitor Analysis",
+      "Target Audience Research",
+      "Goal Setting",
+    ],
     image: "/images/analytics-woman.png",
   },
   {
     number: "02",
     icon: Lightbulb,
     title: "Strategy Development",
-    description: "Based on our findings, we create a comprehensive digital marketing strategy tailored to your needs.",
-    details: ["Marketing Strategy", "Content Planning", "Campaign Design", "Timeline Creation"],
+    description:
+      "Based on our findings, we create a comprehensive digital marketing strategy tailored to your needs.",
+    details: [
+      "Marketing Strategy",
+      "Content Planning",
+      "Campaign Design",
+      "Timeline Creation",
+    ],
     image: "/images/business-growth.png",
   },
   {
@@ -30,7 +41,12 @@ const steps = [
     title: "Implementation & Setup",
     description:
       "Our team implements the strategy across all channels including ads setup, SEO optimization, and content creation.",
-    details: ["Ads Setup", "SEO Implementation", "Content Creation", "Social Media Setup"],
+    details: [
+      "Ads Setup",
+      "SEO Implementation",
+      "Content Creation",
+      "Social Media Setup",
+    ],
     image: "/images/ui-development.png",
   },
   {
@@ -39,17 +55,25 @@ const steps = [
     title: "Monitor & Optimize",
     description:
       "We continuously monitor performance, provide detailed reports, and optimize campaigns for maximum ROI.",
-    details: ["Performance Monitoring", "Regular Reporting", "Campaign Optimization", "Strategy Refinement"],
+    details: [
+      "Performance Monitoring",
+      "Regular Reporting",
+      "Campaign Optimization",
+      "Strategy Refinement",
+    ],
     image: "/images/analytics-dashboard.png",
   },
-]
+];
 
 export default function Process() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-br from-[#FAF5F1] to-white relative overflow-hidden">
+    <section
+      ref={ref}
+      className="py-20 bg-gradient-to-br from-[#FAF5F1] to-white relative overflow-hidden"
+    >
       {/* Background Animation */}
       <div className="absolute inset-0">
         <motion.div
@@ -83,10 +107,12 @@ export default function Process() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">Our Process</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
+            Our Process
+          </h2>
           <p className="text-xl text-[#2E2E2E]/70 max-w-3xl mx-auto">
-            A proven methodology that ensures every project is delivered on time, within budget, and exceeds
-            expectations.
+            A proven methodology that ensures every project is delivered on
+            time, within budget, and exceeds expectations.
           </p>
         </motion.div>
 
@@ -106,29 +132,46 @@ export default function Process() {
                   className="bg-white p-8 rounded-3xl border border-[#C38E70]/10 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
                 >
                   {/* Background Number */}
-                  <div className="absolute top-4 right-4 text-8xl font-bold text-[#C38E70]/5">{step.number}</div>
+                  <div className="absolute top-4 right-4 text-8xl font-bold text-[#C38E70]/5">
+                    {step.number}
+                  </div>
 
                   <div className="flex items-center mb-6 relative z-10">
-                    <span className="text-4xl font-bold text-[#C38E70]/30 mr-4">{step.number}</span>
+                    <span className="text-4xl font-bold text-[#C38E70]/30 mr-4">
+                      {step.number}
+                    </span>
                     <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center">
                       <step.icon className="w-6 h-6 text-white" />
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-[#2E2E2E] mb-4 relative z-10">{step.title}</h3>
-                  <p className="text-[#2E2E2E]/70 mb-6 leading-relaxed relative z-10">{step.description}</p>
+                  <h3 className="text-2xl font-bold text-[#2E2E2E] mb-4 relative z-10">
+                    {step.title}
+                  </h3>
+                  <p className="text-[#2E2E2E]/70 mb-6 leading-relaxed relative z-10">
+                    {step.description}
+                  </p>
 
                   <ul className="space-y-2 relative z-10">
                     {step.details.map((detail, detailIndex) => (
                       <motion.li
                         key={detailIndex}
                         initial={{ opacity: 0, x: -10 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
-                        transition={{ duration: 0.5, delay: index * 0.2 + detailIndex * 0.1 }}
+                        animate={
+                          isInView
+                            ? { opacity: 1, x: 0 }
+                            : { opacity: 0, x: -10 }
+                        }
+                        transition={{
+                          duration: 0.5,
+                          delay: index * 0.2 + detailIndex * 0.1,
+                        }}
                         className="flex items-center space-x-2"
                       >
                         <div className="w-1.5 h-1.5 bg-[#37695F] rounded-full"></div>
-                        <span className="text-sm text-[#2E2E2E]/80">{detail}</span>
+                        <span className="text-sm text-[#2E2E2E]/80">
+                          {detail}
+                        </span>
                       </motion.li>
                     ))}
                   </ul>
@@ -177,5 +220,5 @@ export default function Process() {
         </div>
       </div>
     </section>
-  )
+  );
 }

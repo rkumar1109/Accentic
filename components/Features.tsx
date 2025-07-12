@@ -1,10 +1,18 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
-import { Palette, Code, TrendingUp, Smartphone, Search, Users, MapPin } from "lucide-react"
-import Image from "next/image"
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import {
+  Palette,
+  Code,
+  TrendingUp,
+  Smartphone,
+  Search,
+  Users,
+  MapPin,
+} from "lucide-react";
+import Image from "next/image";
 
 const features = [
   {
@@ -56,14 +64,17 @@ const features = [
       "Full-service social media management including content creation, posting, and community engagement across all platforms.",
     image: "/images/creative-work.png",
   },
-]
+];
 
 export default function Features() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-br from-cream to-white relative overflow-hidden">
+    <section
+      ref={ref}
+      className="py-20 bg-gradient-to-br from-cream to-white relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
         {[...Array(6)].map((_, i) => (
@@ -85,9 +96,12 @@ export default function Features() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">Our Expertise</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
+            Our Expertise
+          </h2>
           <p className="text-xl text-darkBlue/70 max-w-3xl mx-auto">
-            We deliver comprehensive digital solutions that transform businesses and drive sustainable growth.
+            We deliver comprehensive digital solutions that transform businesses
+            and drive sustainable growth.
           </p>
         </motion.div>
 
@@ -123,7 +137,9 @@ export default function Features() {
                 {feature.title}
               </h3>
 
-              <p className="text-darkBlue/70 leading-relaxed relative z-10">{feature.description}</p>
+              <p className="text-darkBlue/70 leading-relaxed relative z-10">
+                {feature.description}
+              </p>
 
               {/* Hover Effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-indigo/5 to-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl" />
@@ -132,5 +148,5 @@ export default function Features() {
         </div>
       </div>
     </section>
-  )
+  );
 }

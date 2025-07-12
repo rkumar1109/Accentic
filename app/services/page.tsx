@@ -1,69 +1,121 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
-import WhatsAppFloat from "@/components/WhatsAppFloat"
-import { Code, Palette, TrendingUp, Smartphone, Search, Users, ArrowRight, CheckCircle, MapPin } from "lucide-react"
+import { motion } from "framer-motion";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import {
+  Code,
+  Palette,
+  TrendingUp,
+  Smartphone,
+  Search,
+  Users,
+  ArrowRight,
+  CheckCircle,
+  MapPin,
+} from "lucide-react";
 
 const services = [
   {
     icon: Users,
     title: "Influencer Marketing",
-    description: "Connect with the right influencers to amplify your brand message and reach your target audience.",
-    features: ["Influencer Research", "Campaign Strategy", "Content Collaboration", "Performance Tracking"],
+    description:
+      "Connect with the right influencers to amplify your brand message and reach your target audience.",
+    features: [
+      "Influencer Research",
+      "Campaign Strategy",
+      "Content Collaboration",
+      "Performance Tracking",
+    ],
     price: "Contact for Pricing",
     image: "/placeholder.svg?height=300&width=400",
   },
   {
     icon: TrendingUp,
     title: "Meta & Google Ads Setup",
-    description: "Professional setup and optimization of Facebook, Instagram, and Google advertising campaigns.",
-    features: ["Campaign Setup", "Audience Targeting", "Ad Creative Design", "Performance Optimization"],
+    description:
+      "Professional setup and optimization of Facebook, Instagram, and Google advertising campaigns.",
+    features: [
+      "Campaign Setup",
+      "Audience Targeting",
+      "Ad Creative Design",
+      "Performance Optimization",
+    ],
     price: "Contact for Pricing",
     image: "/placeholder.svg?height=300&width=400",
   },
   {
     icon: MapPin,
     title: "Local SEO",
-    description: "Dominate local search results and attract nearby customers with comprehensive local SEO.",
-    features: ["Local Keyword Research", "Google My Business", "Local Citations", "Review Management"],
+    description:
+      "Dominate local search results and attract nearby customers with comprehensive local SEO.",
+    features: [
+      "Local Keyword Research",
+      "Google My Business",
+      "Local Citations",
+      "Review Management",
+    ],
     price: "Contact for Pricing",
     image: "/placeholder.svg?height=300&width=400",
   },
   {
     icon: Palette,
     title: "Graphics Designing",
-    description: "Eye-catching visual designs for your brand including logos and marketing materials.",
-    features: ["Logo Design", "Social Media Graphics", "Marketing Materials", "Brand Guidelines"],
+    description:
+      "Eye-catching visual designs for your brand including logos and marketing materials.",
+    features: [
+      "Logo Design",
+      "Social Media Graphics",
+      "Marketing Materials",
+      "Brand Guidelines",
+    ],
     price: "Contact for Pricing",
     image: "/placeholder.svg?height=300&width=400",
   },
   {
     icon: Search,
     title: "Website SEO",
-    description: "Comprehensive on-page and technical SEO optimization to improve search rankings.",
-    features: ["Technical SEO Audit", "On-Page Optimization", "Content Strategy", "Link Building"],
+    description:
+      "Comprehensive on-page and technical SEO optimization to improve search rankings.",
+    features: [
+      "Technical SEO Audit",
+      "On-Page Optimization",
+      "Content Strategy",
+      "Link Building",
+    ],
     price: "Contact for Pricing",
     image: "/placeholder.svg?height=300&width=400",
   },
   {
     icon: Smartphone,
     title: "Google My Business Management",
-    description: "Complete GMB optimization and management to enhance your local online presence.",
-    features: ["Profile Optimization", "Post Management", "Review Responses", "Insights Reporting"],
+    description:
+      "Complete GMB optimization and management to enhance your local online presence.",
+    features: [
+      "Profile Optimization",
+      "Post Management",
+      "Review Responses",
+      "Insights Reporting",
+    ],
     price: "Contact for Pricing",
     image: "/placeholder.svg?height=300&width=400",
   },
   {
     icon: Code,
     title: "Social Media Management",
-    description: "Full-service social media management including content creation and community engagement.",
-    features: ["Content Creation", "Posting Schedule", "Community Management", "Analytics Reporting"],
+    description:
+      "Full-service social media management including content creation and community engagement.",
+    features: [
+      "Content Creation",
+      "Posting Schedule",
+      "Community Management",
+      "Analytics Reporting",
+    ],
     price: "Contact for Pricing",
     image: "/placeholder.svg?height=300&width=400",
   },
-]
+];
 
 export default function Services() {
   return (
@@ -85,10 +137,13 @@ export default function Services() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-6">Our Services</h1>
+            <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-6">
+              Our Services
+            </h1>
             <p className="text-xl text-[#2E2E2E]/70 leading-relaxed">
-              Comprehensive digital solutions designed to transform your business and drive sustainable growth. From web
-              development to digital marketing, we've got you covered.
+              Comprehensive digital solutions designed to transform your
+              business and drive sustainable growth. From web development to
+              digital marketing, we've got you covered.
             </p>
           </motion.div>
         </div>
@@ -131,21 +186,30 @@ export default function Services() {
                     {service.title}
                   </h3>
 
-                  <p className="text-[#2E2E2E]/70 mb-6 leading-relaxed">{service.description}</p>
+                  <p className="text-[#2E2E2E]/70 mb-6 leading-relaxed">
+                    {service.description}
+                  </p>
 
                   {/* Features List */}
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-2">
+                      <li
+                        key={featureIndex}
+                        className="flex items-center space-x-2"
+                      >
                         <CheckCircle className="w-4 h-4 text-[#37695F]" />
-                        <span className="text-sm text-[#2E2E2E]/80">{feature}</span>
+                        <span className="text-sm text-[#2E2E2E]/80">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
 
                   {/* Price */}
                   <div className="flex items-center justify-between">
-                    <span className="text-lg font-semibold text-[#C38E70]">{service.price}</span>
+                    <span className="text-lg font-semibold text-[#C38E70]">
+                      {service.price}
+                    </span>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -177,18 +241,20 @@ export default function Services() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">Ready to Get Started?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
+              Ready to Get Started?
+            </h2>
             <p className="text-xl text-[#2E2E2E]/70 mb-8">
-              Let's discuss your project and create something amazing together. Get a free consultation and custom quote
-              today.
+              Let's discuss your project and create something amazing together.
+              Get a free consultation and custom quote today.
             </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="gradient-bg text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                Get Free Consultation
-              </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="gradient-bg text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              Get Free Consultation
+            </motion.button>
           </motion.div>
         </div>
       </section>
@@ -196,5 +262,5 @@ export default function Services() {
       <Footer />
       <WhatsAppFloat />
     </motion.div>
-  )
+  );
 }

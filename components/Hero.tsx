@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
-import Image from "next/image"
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 function FloatingPaths({ position }: { position: number }) {
   const paths = Array.from({ length: 24 }, (_, i) => ({
@@ -16,11 +16,15 @@ function FloatingPaths({ position }: { position: number }) {
       684 - i * 5 * position
     } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
     width: 0.5 + i * 0.02,
-  }))
+  }));
 
   return (
     <div className="absolute inset-0 pointer-events-none">
-      <svg className="w-full h-full text-indigo" viewBox="0 0 696 316" fill="none">
+      <svg
+        className="w-full h-full text-indigo"
+        viewBox="0 0 696 316"
+        fill="none"
+      >
         <title>Background Paths</title>
         {paths.map((path) => (
           <motion.path
@@ -43,7 +47,7 @@ function FloatingPaths({ position }: { position: number }) {
         ))}
       </svg>
     </div>
-  )
+  );
 }
 
 // Enhanced gradient background component inspired by Apple's aesthetic
@@ -52,7 +56,7 @@ function AnimatedGradientBackground() {
     <div className="absolute inset-0 -z-10 overflow-hidden">
       {/* Noise texture overlay for grain effect */}
       <div className="absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay z-10"></div>
-      
+
       <div className="relative w-full h-full">
         {/* Large primary gradient sphere - Positioned to avoid text clipping */}
         <div
@@ -77,15 +81,15 @@ function AnimatedGradientBackground() {
           className="absolute top-[20%] right-[30%] w-48 h-48 bg-blue/20 rounded-full 
                      filter blur-xl opacity-30 animate-float animation-delay-3000"
         />
-        
+
         <div
           className="absolute bottom-[40%] left-[20%] w-40 h-40 bg-purple/20 rounded-full 
                      filter blur-xl opacity-30 animate-float animation-delay-5000"
         />
-        
+
         {/* Clear space for title text by adding a subtle gradient that lightens that area */}
         <div className="absolute top-0 left-0 right-0 h-[40%] bg-gradient-to-b from-cream/60 to-transparent"></div>
-        
+
         {/* Ensure the bottom text area is clear */}
         <div className="absolute bottom-0 left-0 right-0 h-[25%] bg-gradient-to-t from-cream/50 to-transparent"></div>
       </div>
@@ -94,8 +98,8 @@ function AnimatedGradientBackground() {
 }
 
 export default function Hero() {
-  const title = "Accentic Digital Solutions"
-  const words = title.split(" ")
+  const title = "Accentic Digital Solutions";
+  const words = title.split(" ");
 
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-cream via-lightBlue/30 to-indigo/10">
@@ -124,7 +128,10 @@ export default function Hero() {
             <div className="mb-8 pb-4">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] overflow-visible">
                 {words.map((word, wordIndex) => (
-                  <span key={wordIndex} className="inline-block mr-3 last:mr-0 mb-2 overflow-visible">
+                  <span
+                    key={wordIndex}
+                    className="inline-block mr-3 last:mr-0 mb-2 overflow-visible"
+                  >
                     {word.split("").map((letter, letterIndex) => (
                       <motion.span
                         key={`${wordIndex}-${letterIndex}`}
@@ -137,7 +144,7 @@ export default function Hero() {
                           damping: 25,
                         }}
                         className="inline-block text-gradient overflow-visible"
-                        style={{ lineHeight: '1.2', paddingBottom: '0.25rem' }}
+                        style={{ lineHeight: "1.2", paddingBottom: "0.25rem" }}
                       >
                         {letter}
                       </motion.span>
@@ -164,9 +171,10 @@ export default function Hero() {
               transition={{ delay: 1.8, duration: 0.8 }}
               className="text-lg text-darkBlue/80 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
-              We are a full-service digital marketing agency specializing in influencer marketing, Meta & Google Ads,
-              local SEO, graphics design, and social media management. Transform your digital presence with our expert
-              solutions.
+              We are a full-service digital marketing agency specializing in
+              influencer marketing, Meta & Google Ads, local SEO, graphics
+              design, and social media management. Transform your digital
+              presence with our expert solutions.
             </motion.p>
 
             {/* Key Benefits */}
@@ -176,7 +184,12 @@ export default function Hero() {
               transition={{ delay: 2.0, duration: 0.8 }}
               className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8 text-sm"
             >
-              {["500+ Projects", "98% Satisfaction", "24/7 Support", "ROI Guaranteed"].map((benefit, index) => (
+              {[
+                "500+ Projects",
+                "98% Satisfaction",
+                "24/7 Support",
+                "ROI Guaranteed",
+              ].map((benefit, index) => (
                 <motion.div
                   key={benefit}
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -197,7 +210,11 @@ export default function Hero() {
               transition={{ delay: 2.1, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="group">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="group"
+              >
                 <Link
                   href="/contact"
                   className="inline-flex items-center px-8 py-4 gradient-bg text-white text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 card-glow hover:card-glow-hover"
@@ -207,7 +224,10 @@ export default function Hero() {
                 </Link>
               </motion.div>
 
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Link
                   href="/services"
                   className="inline-flex items-center px-8 py-4 glass-effect border-2 border-indigo text-indigo text-lg font-semibold rounded-2xl hover:bg-indigo hover:text-white transition-all duration-300"
@@ -264,5 +284,5 @@ export default function Hero() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

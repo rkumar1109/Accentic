@@ -1,18 +1,21 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
-import { ArrowRight, Phone, Mail } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { ArrowRight, Phone, Mail } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function CTA() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-br from-darkBlue via-indigo to-purple relative overflow-hidden">
+    <section
+      ref={ref}
+      className="py-20 bg-gradient-to-br from-darkBlue via-indigo to-purple relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 right-10 w-64 h-64 bg-cyan/10 rounded-full blur-3xl"></div>
@@ -35,19 +38,21 @@ export default function CTA() {
             </h2>
 
             <p className="text-xl text-white/80 mb-8 leading-relaxed">
-              Join hundreds of satisfied clients who have accelerated their growth with our innovative digital
-              solutions. Let's discuss your project and create something extraordinary together.
+              Join hundreds of satisfied clients who have accelerated their
+              growth with our innovative digital solutions. Let's discuss your
+              project and create something extraordinary together.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-8">
-              <Link href="/contact"><motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="group bg-gradient-to-r from-cyan to-blue hover:from-blue hover:to-cyan text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 card-glow"
-              >
-                <span>Get Free Consultation</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </motion.button>
+              <Link href="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group bg-gradient-to-r from-cyan to-blue hover:from-blue hover:to-cyan text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 card-glow"
+                >
+                  <span>Get Free Consultation</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </motion.button>
               </Link>
               <Link href="/portfolio">
                 <motion.button
@@ -76,7 +81,10 @@ export default function CTA() {
               </div>
               <div className="flex items-center space-x-3 text-white/80">
                 <Mail className="w-5 h-5 text-cyan" />
-                <a href="mailto:Accenticdigitalsolutions@gmail.com" className="hover:text-cyan transition-colors duration-300">
+                <a
+                  href="mailto:Accenticdigitalsolutions@gmail.com"
+                  className="hover:text-cyan transition-colors duration-300"
+                >
                   Accenticdigitalsolutions@gmail.com
                 </a>
               </div>
@@ -89,11 +97,20 @@ export default function CTA() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="flex flex-wrap justify-center lg:justify-start gap-6 mt-8 pt-8 border-t border-white/20"
             >
-              {["Free Consultation", "24/7 Support", "Money-Back Guarantee", "Fast Delivery"].map((feature, index) => (
+              {[
+                "Free Consultation",
+                "24/7 Support",
+                "Money-Back Guarantee",
+                "Fast Delivery",
+              ].map((feature, index) => (
                 <motion.div
                   key={feature}
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                  animate={
+                    isInView
+                      ? { opacity: 1, scale: 1 }
+                      : { opacity: 0, scale: 0.8 }
+                  }
                   transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
                   className="flex items-center space-x-2 text-white/70"
                 >
@@ -129,5 +146,5 @@ export default function CTA() {
         </div>
       </div>
     </section>
-  )
+  );
 }

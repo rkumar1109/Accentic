@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { MessageCircle } from "lucide-react"
+import { motion } from "framer-motion";
+import { MessageCircle } from "lucide-react";
 
 export default function WhatsAppFloat() {
   const handleWhatsAppClick = () => {
-    const phoneNumber = "916370611812" // Indian number format for WhatsApp
-    const message = "Hi! I'm interested in your digital services."
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
-    window.open(whatsappUrl, "_blank")
-  }
+    const phoneNumber = "916370611812"; // Indian number format for WhatsApp
+    const message = "Hi! I'm interested in your digital services.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+  };
 
   return (
     <motion.button
@@ -28,5 +28,5 @@ export default function WhatsAppFloat() {
     >
       <MessageCircle className="w-7 h-7 text-white" />
     </motion.button>
-  )
+  );
 }

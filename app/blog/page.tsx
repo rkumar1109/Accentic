@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useState } from "react"
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
-import WhatsAppFloat from "@/components/WhatsAppFloat"
-import { Calendar, User, ArrowRight, Search } from "lucide-react"
+import { motion } from "framer-motion";
+import { useState } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import { Calendar, User, ArrowRight, Search } from "lucide-react";
 
 const blogPosts = [
   {
@@ -24,7 +24,8 @@ const blogPosts = [
   {
     id: 2,
     title: "Digital Marketing Strategies That Actually Work",
-    excerpt: "Discover proven digital marketing strategies that drive real results and maximize your ROI.",
+    excerpt:
+      "Discover proven digital marketing strategies that drive real results and maximize your ROI.",
     content: "Full article content would go here...",
     author: "David Thompson",
     date: "2024-01-10",
@@ -49,7 +50,8 @@ const blogPosts = [
   {
     id: 4,
     title: "The Psychology of User Experience Design",
-    excerpt: "Understanding user psychology is crucial for creating intuitive and engaging digital experiences.",
+    excerpt:
+      "Understanding user psychology is crucial for creating intuitive and engaging digital experiences.",
     content: "Full article content would go here...",
     author: "Emily Rodriguez",
     date: "2023-12-28",
@@ -61,7 +63,8 @@ const blogPosts = [
   {
     id: 5,
     title: "Mobile-First Design: Why It Matters More Than Ever",
-    excerpt: "With mobile traffic dominating the web, mobile-first design isn't just an option—it's essential.",
+    excerpt:
+      "With mobile traffic dominating the web, mobile-first design isn't just an option—it's essential.",
     content: "Full article content would go here...",
     author: "Sarah Johnson",
     date: "2023-12-20",
@@ -73,7 +76,8 @@ const blogPosts = [
   {
     id: 6,
     title: "SEO in 2024: What's Changed and What Hasn't",
-    excerpt: "Stay ahead of the curve with the latest SEO strategies and algorithm updates for 2024.",
+    excerpt:
+      "Stay ahead of the curve with the latest SEO strategies and algorithm updates for 2024.",
     content: "Full article content would go here...",
     author: "David Thompson",
     date: "2023-12-15",
@@ -82,22 +86,31 @@ const blogPosts = [
     tags: ["SEO", "Google", "Algorithm", "Strategy"],
     readTime: "8 min read",
   },
-]
+];
 
-const categories = ["All", "Web Development", "Marketing", "Design", "Development"]
+const categories = [
+  "All",
+  "Web Development",
+  "Marketing",
+  "Design",
+  "Development",
+];
 
 export default function Blog() {
-  const [activeCategory, setActiveCategory] = useState("All")
-  const [searchTerm, setSearchTerm] = useState("")
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const filteredPosts = blogPosts.filter((post) => {
-    const matchesCategory = activeCategory === "All" || post.category === activeCategory
+    const matchesCategory =
+      activeCategory === "All" || post.category === activeCategory;
     const matchesSearch =
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-    return matchesCategory && matchesSearch
-  })
+      post.tags.some((tag) =>
+        tag.toLowerCase().includes(searchTerm.toLowerCase()),
+      );
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <motion.div
@@ -118,10 +131,13 @@ export default function Blog() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-6">Our Blog</h1>
+            <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-6">
+              Our Blog
+            </h1>
             <p className="text-xl text-[#2E2E2E]/70 leading-relaxed mb-8">
-              Insights, tips, and trends from the world of digital innovation. Stay updated with the latest in web
-              development, design, and digital marketing.
+              Insights, tips, and trends from the world of digital innovation.
+              Stay updated with the latest in web development, design, and
+              digital marketing.
             </p>
 
             {/* Search Bar */}
@@ -167,7 +183,9 @@ export default function Blog() {
         <div className="container mx-auto px-4 md:px-6">
           {filteredPosts.length === 0 ? (
             <div className="text-center py-16">
-              <p className="text-xl text-[#2E2E2E]/70">No articles found matching your criteria.</p>
+              <p className="text-xl text-[#2E2E2E]/70">
+                No articles found matching your criteria.
+              </p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -217,7 +235,9 @@ export default function Blog() {
                       {post.title}
                     </h2>
 
-                    <p className="text-[#2E2E2E]/70 mb-4 leading-relaxed line-clamp-3">{post.excerpt}</p>
+                    <p className="text-[#2E2E2E]/70 mb-4 leading-relaxed line-clamp-3">
+                      {post.excerpt}
+                    </p>
 
                     {/* Tags */}
                     <div className="flex flex-wrap gap-2 mb-4">
@@ -276,10 +296,12 @@ export default function Blog() {
             viewport={{ once: true }}
             className="bg-gradient-to-br from-[#37695F]/5 to-[#C38E70]/5 p-12 rounded-3xl text-center border border-[#C38E70]/10"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2E2E2E] mb-4">Stay Updated</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2E2E2E] mb-4">
+              Stay Updated
+            </h2>
             <p className="text-lg text-[#2E2E2E]/70 mb-8 max-w-2xl mx-auto">
-              Subscribe to our newsletter and get the latest insights, tips, and trends delivered straight to your
-              inbox.
+              Subscribe to our newsletter and get the latest insights, tips, and
+              trends delivered straight to your inbox.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
@@ -303,5 +325,5 @@ export default function Blog() {
       <Footer />
       <WhatsAppFloat />
     </motion.div>
-  )
+  );
 }

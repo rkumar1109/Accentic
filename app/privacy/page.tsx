@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
-import WhatsAppFloat from "@/components/WhatsAppFloat"
+import { motion } from "framer-motion";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export default function Privacy() {
   const sections = [
@@ -47,7 +47,7 @@ export default function Privacy() {
       content:
         "If you have any questions about this privacy policy or our data practices, please contact us at Accenticdigitalsolutions@gmail.com or call us at 6370611812 or 8249806562.",
     },
-  ]
+  ];
 
   return (
     <motion.div
@@ -68,11 +68,16 @@ export default function Privacy() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-6">Privacy Policy</h1>
+            <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-6">
+              Privacy Policy
+            </h1>
             <p className="text-xl text-[#2E2E2E]/70 leading-relaxed">
-              Your privacy is important to us. This policy explains how we collect, use, and protect your information.
+              Your privacy is important to us. This policy explains how we
+              collect, use, and protect your information.
             </p>
-            <p className="text-sm text-[#2E2E2E]/60 mt-4">Last updated: January 1, 2024</p>
+            <p className="text-sm text-[#2E2E2E]/60 mt-4">
+              Last updated: January 1, 2024
+            </p>
           </motion.div>
         </div>
       </section>
@@ -89,11 +94,15 @@ export default function Privacy() {
               className="prose prose-lg max-w-none"
             >
               <div className="bg-[#FAF5F1] p-8 rounded-2xl mb-12 border border-[#C38E70]/10">
-                <h2 className="text-2xl font-bold text-[#2E2E2E] mb-4">Overview</h2>
+                <h2 className="text-2xl font-bold text-[#2E2E2E] mb-4">
+                  Overview
+                </h2>
                 <p className="text-[#2E2E2E]/70 leading-relaxed">
-                  At Accentic Digital Solutions, we are committed to protecting your privacy and ensuring the security
-                  of your personal information. This Privacy Policy describes how we collect, use, disclose, and
-                  safeguard your information when you visit our website or use our services.
+                  At Accentic Digital Solutions, we are committed to protecting
+                  your privacy and ensuring the security of your personal
+                  information. This Privacy Policy describes how we collect,
+                  use, disclose, and safeguard your information when you visit
+                  our website or use our services.
                 </p>
               </div>
 
@@ -107,8 +116,12 @@ export default function Privacy() {
                     viewport={{ once: true }}
                     className="bg-white p-6 rounded-xl shadow-sm border border-[#C38E70]/10 hover:shadow-md transition-shadow duration-300"
                   >
-                    <h3 className="text-xl font-semibold text-[#2E2E2E] mb-4 text-gradient">{section.title}</h3>
-                    <p className="text-[#2E2E2E]/70 leading-relaxed">{section.content}</p>
+                    <h3 className="text-xl font-semibold text-[#2E2E2E] mb-4 text-gradient">
+                      {section.title}
+                    </h3>
+                    <p className="text-[#2E2E2E]/70 leading-relaxed">
+                      {section.content}
+                    </p>
                   </motion.div>
                 ))}
               </div>
@@ -120,9 +133,12 @@ export default function Privacy() {
                 viewport={{ once: true }}
                 className="bg-gradient-to-br from-[#37695F]/5 to-[#C38E70]/5 p-8 rounded-2xl mt-12 text-center"
               >
-                <h3 className="text-2xl font-bold text-[#2E2E2E] mb-4">Questions About Our Privacy Policy?</h3>
+                <h3 className="text-2xl font-bold text-[#2E2E2E] mb-4">
+                  Questions About Our Privacy Policy?
+                </h3>
                 <p className="text-[#2E2E2E]/70 mb-6">
-                  If you have any questions or concerns about our privacy practices, we're here to help.
+                  If you have any questions or concerns about our privacy
+                  practices, we're here to help.
                 </p>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -140,5 +156,5 @@ export default function Privacy() {
       <Footer />
       <WhatsAppFloat />
     </motion.div>
-  )
+  );
 }

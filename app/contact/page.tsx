@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { motion } from "framer-motion"
-import { useState } from "react"
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
-import WhatsAppFloat from "@/components/WhatsAppFloat"
-import { Mail, Phone, MapPin, Send, User, MessageSquare } from "lucide-react"
+import { motion } from "framer-motion";
+import { useState } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import { Mail, Phone, MapPin, Send, User, MessageSquare } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,23 +15,24 @@ export default function Contact() {
     email: "",
     phone: "",
     message: "",
-  })
+  });
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
-  // const handleSubmit = 
+  // const handleSubmit =
   // async (e: React.FormEvent) => {
   //   e.preventDefault()
   //   setIsSubmitting(true)
-
 
   //   // Simulate form submission
   //   await new Promise((resolve) => setTimeout(resolve, 2000))
@@ -51,7 +52,7 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-  
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -68,12 +69,12 @@ export default function Contact() {
         }),
       });
       console.log(process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY);
-  
+
       const result = await response.json();
-  
+
       if (result.success) {
         console.log("Success:", result);
-        alert("Message sent successfully!");
+        alert("Thank You!");
         setFormData({
           name: "",
           email: "",
@@ -88,10 +89,9 @@ export default function Contact() {
       console.error("Submission error:", error);
       alert("Network error. Please try again later.");
     }
-  
+
     setIsSubmitting(false);
   };
-  
 
   return (
     <motion.div
@@ -112,10 +112,12 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-6">Get In Touch</h1>
+            <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-6">
+              Get In Touch
+            </h1>
             <p className="text-xl text-[#2E2E2E]/70 leading-relaxed">
-              Ready to transform your digital presence? Let's discuss your project and create something amazing
-              together.
+              Ready to transform your digital presence? Let's discuss your
+              project and create something amazing together.
             </p>
           </motion.div>
         </div>
@@ -134,10 +136,14 @@ export default function Contact() {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-[#2E2E2E] mb-6">Let's Start a Conversation</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-[#2E2E2E] mb-6">
+                  Let's Start a Conversation
+                </h2>
                 <p className="text-lg text-[#2E2E2E]/70 leading-relaxed">
-                  We're here to help you achieve your digital goals. Whether you need a new website, digital marketing
-                  strategy, or complete brand overhaul, our team is ready to deliver exceptional results.
+                  We're here to help you achieve your digital goals. Whether you
+                  need a new website, digital marketing strategy, or complete
+                  brand overhaul, our team is ready to deliver exceptional
+                  results.
                 </p>
               </div>
 
@@ -152,7 +158,10 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-[#2E2E2E]">Email Us</h3>
-                    <a href="mailto:Accenticdigitalsolutions@gmail.com" className="text-[#2E2E2E]/70 hover:text-[#C38E70] transition-colors duration-300">
+                    <a
+                      href="mailto:Accenticdigitalsolutions@gmail.com"
+                      className="text-[#2E2E2E]/70 hover:text-[#C38E70] transition-colors duration-300"
+                    >
                       Accenticdigitalsolutions@gmail.com
                     </a>
                   </div>
@@ -183,14 +192,19 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-[#2E2E2E]">Visit Us</h3>
-                    <p className="text-[#2E2E2E]/70">Accentic Digital Solutions, Jagamara, Bhubaneswar, Odisha, 751003</p>
+                    <p className="text-[#2E2E2E]/70">
+                      Accentic Digital Solutions, Jagamara, Bhubaneswar, Odisha,
+                      751003
+                    </p>
                   </div>
                 </motion.div>
               </div>
 
               {/* Business Hours */}
               <div className="bg-gradient-to-br from-[#37695F]/5 to-[#C38E70]/5 p-6 rounded-2xl">
-                <h3 className="text-xl font-semibold text-[#2E2E2E] mb-4">Business Hours</h3>
+                <h3 className="text-xl font-semibold text-[#2E2E2E] mb-4">
+                  Business Hours
+                </h3>
                 <div className="space-y-2 text-[#2E2E2E]/70">
                   <div className="flex justify-between">
                     <span>Monday - Friday</span>
@@ -216,11 +230,20 @@ export default function Contact() {
               viewport={{ once: true }}
               className="bg-[#FAF5F1] p-8 rounded-3xl shadow-lg border border-[#C38E70]/10"
             >
-              <h3 className="text-2xl font-bold text-[#2E2E2E] mb-6">Send us a Message</h3>
+              <h3 className="text-2xl font-bold text-[#2E2E2E] mb-6">
+                Send us a Message
+              </h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-                  <label htmlFor="name" className="block text-sm font-medium text-[#2E2E2E] mb-2">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                >
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-[#2E2E2E] mb-2"
+                  >
                     Full Name *
                   </label>
                   <div className="relative">
@@ -238,8 +261,15 @@ export default function Contact() {
                   </div>
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-                  <label htmlFor="email" className="block text-sm font-medium text-[#2E2E2E] mb-2">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-[#2E2E2E] mb-2"
+                  >
                     Email Address
                   </label>
                   <div className="relative">
@@ -257,8 +287,15 @@ export default function Contact() {
                   </div>
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
-                  <label htmlFor="phone" className="block text-sm font-medium text-[#2E2E2E] mb-2">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-[#2E2E2E] mb-2"
+                  >
                     Phone Number *
                   </label>
                   <div className="relative">
@@ -276,8 +313,15 @@ export default function Contact() {
                   </div>
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
-                  <label htmlFor="message" className="block text-sm font-medium text-[#2E2E2E] mb-2">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-[#2E2E2E] mb-2"
+                  >
                     Message (Optional)
                   </label>
                   <div className="relative">
@@ -322,5 +366,5 @@ export default function Contact() {
       <Footer />
       <WhatsAppFloat />
     </motion.div>
-  )
+  );
 }

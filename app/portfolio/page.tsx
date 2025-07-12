@@ -1,11 +1,12 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useState } from "react"
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
-import WhatsAppFloat from "@/components/WhatsAppFloat"
-import { ExternalLink, Github, Calendar, Tag } from "lucide-react"
+import { motion } from "framer-motion";
+import { useState } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import { ExternalLink, Github, Calendar, Tag } from "lucide-react";
+import SwiperCarousel from "./Carousel";
 
 const projects = [
   {
@@ -14,13 +15,17 @@ const projects = [
     category: "Web Development",
     description:
       "A comprehensive e-commerce solution with advanced features including real-time inventory management, multi-payment gateway integration, and AI-powered product recommendations.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/logos/Amedore.jpg?height=300&width=600",
     technologies: ["React", "Node.js", "MongoDB", "Stripe", "AWS"],
     liveUrl: "#",
     githubUrl: "#",
     date: "2024",
     client: "TechStart Inc.",
-    results: ["300% increase in sales", "50% faster checkout process", "99.9% uptime"],
+    results: [
+      "300% increase in sales",
+      "50% faster checkout process",
+      "99.9% uptime",
+    ],
   },
   {
     id: 2,
@@ -28,13 +33,17 @@ const projects = [
     category: "Design",
     description:
       "Complete brand overhaul for an eco-friendly lifestyle company, including logo design, brand guidelines, packaging design, and marketing materials.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/logos/B21.png?height=400&width=600",
     technologies: ["Figma", "Illustrator", "Photoshop", "InDesign"],
     liveUrl: "#",
     githubUrl: "#",
     date: "2024",
     client: "GreenLife Co.",
-    results: ["40% brand recognition increase", "25% sales growth", "Award-winning design"],
+    results: [
+      "40% brand recognition increase",
+      "25% sales growth",
+      "Award-winning design",
+    ],
   },
   {
     id: 3,
@@ -42,7 +51,7 @@ const projects = [
     category: "Web Development",
     description:
       "A sophisticated financial analytics dashboard with real-time data visualization, automated reporting, and advanced security features.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/logos/CLSSYDINE.jpg?height=400&width=600",
     technologies: ["Vue.js", "D3.js", "Python", "PostgreSQL", "Docker"],
     liveUrl: "#",
     githubUrl: "#",
@@ -56,7 +65,7 @@ const projects = [
     category: "Mobile",
     description:
       "Cross-platform fitness tracking application with social features, workout planning, and integration with wearable devices.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/logos/Amedore.jpg?height=300&width=600",
     technologies: ["React Native", "Firebase", "Redux", "HealthKit"],
     liveUrl: "#",
     githubUrl: "#",
@@ -70,7 +79,7 @@ const projects = [
     category: "Marketing",
     description:
       "Multi-channel digital marketing campaign for an online education platform, including SEO, PPC, social media, and content marketing.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/logos/CLSSYDINE.jpg?height=400&width=600",
     technologies: ["Google Ads", "Facebook Ads", "SEMrush", "HubSpot"],
     liveUrl: "#",
     githubUrl: "#",
@@ -90,18 +99,32 @@ const projects = [
     githubUrl: "#",
     date: "2022",
     client: "RestaurantPro Chain",
-    results: ["30% efficiency increase", "Real-time operations", "Cost optimization"],
+    results: [
+      "30% efficiency increase",
+      "Real-time operations",
+      "Cost optimization",
+    ],
   },
-]
+];
 
-const categories = ["All", "Web Development", "Design", "Marketing", "Mobile"]
+export const imgArray = projects
+  .filter((project) => project.image)
+  .map((project) => project.image);
+console.log(imgArray);
+const categories = ["All", "Web Development", "Design", "Marketing", "Mobile"];
 
 export default function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState("All")
-  const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null)
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [selectedProject, setSelectedProject] = useState<
+    (typeof projects)[0] | null
+  >(null);
 
   const filteredProjects =
-    activeCategory === "All" ? projects : projects.filter((project) => project.category === activeCategory)
+    activeCategory === "All" ?
+      projects.filter(
+        (project) => project.category === "Web Development" && "Design"
+      )
+    : projects.filter((project) => project.category === activeCategory);
 
   return (
     <motion.div
@@ -122,10 +145,14 @@ export default function Portfolio() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-6">Our Portfolio</h1>
+            <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-6">
+              Our Portfolio
+            </h1>
+
             <p className="text-xl text-[#2E2E2E]/70 leading-relaxed">
-              Explore our latest projects and discover how we've helped businesses achieve remarkable digital
-              transformation and sustainable growth.
+              Explore our latest projects and discover how we've helped
+              businesses achieve remarkable digital transformation and
+              sustainable growth.
             </p>
           </motion.div>
         </div>
@@ -142,9 +169,9 @@ export default function Portfolio() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activeCategory === category
-                    ? "gradient-bg text-white shadow-lg"
-                    : "bg-[#FAF5F1] text-[#2E2E2E] hover:bg-[#C38E70]/10 border border-[#C38E70]/20"
+                  activeCategory === category ?
+                    "gradient-bg text-white shadow-lg"
+                  : "bg-[#FAF5F1] text-[#2E2E2E] hover:bg-[#C38E70]/10 border border-[#C38E70]/20"
                 }`}
               >
                 {category}
@@ -158,88 +185,103 @@ export default function Portfolio() {
       <section className="py-20 bg-[#FAF5F1]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02, y: -5 }}
-                onClick={() => setSelectedProject(project)}
-                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10 cursor-pointer"
-              >
-                {/* Project Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2E2E2E]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-4 left-4 right-4 flex justify-between">
-                      <motion.a
-                        href={project.liveUrl}
-                        onClick={(e) => e.stopPropagation()}
-                        whileHover={{ scale: 1.1 }}
-                        className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
-                      >
-                        <ExternalLink className="w-5 h-5" />
-                      </motion.a>
-                      <motion.a
-                        href={project.githubUrl}
-                        onClick={(e) => e.stopPropagation()}
-                        whileHover={{ scale: 1.1 }}
-                        className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
-                      >
-                        <Github className="w-5 h-5" />
-                      </motion.a>
+            {filteredProjects.map((project, index) => {
+              if (
+                project.category === "Mobile" ||
+                project.category === "Marketing"
+              ) {
+                return (
+                  <div key={project.id} className="col-span-full">
+                    <SwiperCarousel />
+                  </div>
+                );
+              }
+
+              return (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  onClick={() => setSelectedProject(project)}
+                  className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10 cursor-pointer"
+                >
+                  {/* Image */}
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#2E2E2E]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-4 left-4 right-4 flex justify-between">
+                        <motion.a
+                          href={project.liveUrl}
+                          onClick={(e) => e.stopPropagation()}
+                          whileHover={{ scale: 1.1 }}
+                          className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
+                        >
+                          <ExternalLink className="w-5 h-5" />
+                        </motion.a>
+                        <motion.a
+                          href={project.githubUrl}
+                          onClick={(e) => e.stopPropagation()}
+                          whileHover={{ scale: 1.1 }}
+                          className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
+                        >
+                          <Github className="w-5 h-5" />
+                        </motion.a>
+                      </div>
+                    </div>
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-[#C38E70] text-white px-3 py-1 rounded-full text-xs font-medium">
+                        {project.category}
+                      </span>
                     </div>
                   </div>
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-[#C38E70] text-white px-3 py-1 rounded-full text-xs font-medium">
-                      {project.category}
-                    </span>
-                  </div>
-                </div>
 
-                {/* Project Content */}
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-xl font-bold text-[#2E2E2E] group-hover:text-[#C38E70] transition-colors duration-300">
-                      {project.title}
-                    </h3>
-                    <span className="text-sm text-[#2E2E2E]/60">{project.date}</span>
-                  </div>
-
-                  <p className="text-[#2E2E2E]/70 mb-4 leading-relaxed line-clamp-3">{project.description}</p>
-
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.slice(0, 3).map((tech) => (
-                      <span
-                        key={tech}
-                        className="bg-[#FAF5F1] text-[#37695F] px-2 py-1 rounded-full text-xs font-medium border border-[#37695F]/20"
-                      >
-                        {tech}
+                  {/* Content */}
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-xl font-bold text-[#2E2E2E] group-hover:text-[#C38E70] transition-colors duration-300">
+                        {project.title}
+                      </h3>
+                      <span className="text-sm text-[#2E2E2E]/60">
+                        {project.date}
                       </span>
-                    ))}
-                    {project.technologies.length > 3 && (
-                      <span className="bg-[#FAF5F1] text-[#37695F] px-2 py-1 rounded-full text-xs font-medium border border-[#37695F]/20">
-                        +{project.technologies.length - 3}
-                      </span>
-                    )}
+                    </div>
+                    <p className="text-[#2E2E2E]/70 mb-4 leading-relaxed line-clamp-3">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.slice(0, 3).map((tech) => (
+                        <span
+                          key={tech}
+                          className="bg-[#FAF5F1] text-[#37695F] px-2 py-1 rounded-full text-xs font-medium border border-[#37695F]/20"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {project.technologies.length > 3 && (
+                        <span className="bg-[#FAF5F1] text-[#37695F] px-2 py-1 rounded-full text-xs font-medium border border-[#37695F]/20">
+                          +{project.technologies.length - 3}
+                        </span>
+                      )}
+                    </div>
+                    <div className="text-sm text-[#2E2E2E]/60">
+                      Client: {project.client}
+                    </div>
                   </div>
-
-                  <div className="text-sm text-[#2E2E2E]/60">Client: {project.client}</div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Project Modal */}
+      {/* Modal */}
       {selectedProject && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -248,6 +290,7 @@ export default function Portfolio() {
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           onClick={() => setSelectedProject(null)}
         >
+          {/* Modal Content */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -255,14 +298,12 @@ export default function Portfolio() {
             className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Header & Image */}
             <div className="relative">
               <button
                 onClick={() => setSelectedProject(null)}
                 className="absolute top-4 right-4 w-8 h-8 bg-[#2E2E2E]/10 hover:bg-[#2E2E2E]/20 rounded-full flex items-center justify-center transition-colors duration-200 z-10"
-              >
-                ×
-              </button>
-
+              ></button>
               <img
                 src={selectedProject.image || "/placeholder.svg"}
                 alt={selectedProject.title}
@@ -270,7 +311,9 @@ export default function Portfolio() {
               />
             </div>
 
+            {/* Modal Body */}
             <div className="p-8">
+              {/* Meta */}
               <div className="flex items-center justify-between mb-4">
                 <span className="bg-[#C38E70] text-white px-3 py-1 rounded-full text-sm font-medium">
                   {selectedProject.category}
@@ -281,10 +324,16 @@ export default function Portfolio() {
                 </div>
               </div>
 
-              <h2 className="text-3xl font-bold text-[#2E2E2E] mb-2">{selectedProject.title}</h2>
-              <p className="text-[#C38E70] font-medium mb-6">Client: {selectedProject.client}</p>
+              <h2 className="text-3xl font-bold text-[#2E2E2E] mb-2">
+                {selectedProject.title}
+              </h2>
+              <p className="text-[#C38E70] font-medium mb-6">
+                Client: {selectedProject.client}
+              </p>
 
-              <p className="text-[#2E2E2E]/70 mb-8 leading-relaxed text-lg">{selectedProject.description}</p>
+              <p className="text-[#2E2E2E]/70 mb-8 leading-relaxed text-lg">
+                {selectedProject.description}
+              </p>
 
               {/* Technologies */}
               <div className="mb-8">
@@ -306,17 +355,22 @@ export default function Portfolio() {
 
               {/* Results */}
               <div className="mb-8">
-                <h3 className="text-lg font-semibold text-[#2E2E2E] mb-4">Key Results</h3>
+                <h3 className="text-lg font-semibold text-[#2E2E2E] mb-4">
+                  Key Results
+                </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {selectedProject.results.map((result, index) => (
-                    <div key={index} className="bg-[#FAF5F1] p-4 rounded-xl border border-[#C38E70]/10">
+                    <div
+                      key={index}
+                      className="bg-[#FAF5F1] p-4 rounded-xl border border-[#C38E70]/10"
+                    >
                       <p className="text-[#2E2E2E] font-medium">{result}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Action Buttons */}
+              {/* Buttons */}
               <div className="flex space-x-4">
                 <motion.a
                   href={selectedProject.liveUrl}
@@ -345,5 +399,5 @@ export default function Portfolio() {
       <Footer />
       <WhatsAppFloat />
     </motion.div>
-  )
+  );
 }

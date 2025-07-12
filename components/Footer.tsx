@@ -1,8 +1,16 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import { motion } from "framer-motion";
+import Link from "next/link";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
 
 export default function Footer() {
   const footerLinks = {
@@ -25,14 +33,14 @@ export default function Footer() {
       { name: "Terms of Service", href: "/terms" },
       { name: "Cookie Policy", href: "/cookies" },
     ],
-  }
+  };
 
   const socialLinks = [
     { icon: Facebook, href: "#", name: "Facebook" },
     { icon: Twitter, href: "#", name: "Twitter" },
     { icon: Instagram, href: "#", name: "Instagram" },
     { icon: Linkedin, href: "#", name: "LinkedIn" },
-  ]
+  ];
 
   return (
     <motion.footer
@@ -51,15 +59,20 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-gradient mb-4">Accentic Digital Solutions</h3>
+            <h3 className="text-2xl font-bold text-gradient mb-4">
+              Accentic Digital Solutions
+            </h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Fueling growth with creativity. We transform businesses through innovative digital solutions and strategic
-              thinking.
+              Fueling growth with creativity. We transform businesses through
+              innovative digital solutions and strategic thinking.
             </p>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-[#C38E70]" />
-                <a href="mailto:Accenticdigitalsolutions@gmail.com" className="text-gray-300 hover:text-[#C38E70] transition-colors duration-300">
+                <a
+                  href="mailto:Accenticdigitalsolutions@gmail.com"
+                  className="text-gray-300 hover:text-[#C38E70] transition-colors duration-300"
+                >
                   Accenticdigitalsolutions@gmail.com
                 </a>
               </div>
@@ -72,7 +85,10 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-[#C38E70]" />
-                <span className="text-gray-300">Accentic Digital Solutions, Jagamara, Bhubaneswar, Odisha, 751003</span>
+                <span className="text-gray-300">
+                  Accentic Digital Solutions, Jagamara, Bhubaneswar, Odisha,
+                  751003
+                </span>
               </div>
             </div>
           </motion.div>
@@ -84,11 +100,16 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-4 text-[#C38E70]">Company</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#C38E70]">
+              Company
+            </h4>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-300 hover:text-[#C38E70] transition-colors duration-200">
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-[#C38E70] transition-colors duration-200"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -103,11 +124,16 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-4 text-[#C38E70]">Services</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#C38E70]">
+              Services
+            </h4>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-300 hover:text-[#C38E70] transition-colors duration-200">
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-[#C38E70] transition-colors duration-200"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -126,7 +152,10 @@ export default function Footer() {
             <ul className="space-y-2 mb-6">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-300 hover:text-[#C38E70] transition-colors duration-200">
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-[#C38E70] transition-colors duration-200"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -157,9 +186,11 @@ export default function Footer() {
           viewport={{ once: true }}
           className="border-t border-gray-700 pt-8 text-center"
         >
-          <p className="text-gray-400">© 2025 Accentic Digital Solutions. All rights reserved.</p>
+          <p className="text-gray-400">
+            © 2025 Accentic Digital Solutions. All rights reserved.
+          </p>
         </motion.div>
       </div>
     </motion.footer>
-  )
+  );
 }
