@@ -93,7 +93,7 @@ const categories = [
   "Web Development",
   "Marketing",
   "Design",
-  "Development",
+  // "Development",
 ];
 
 export default function Blog() {
@@ -266,7 +266,7 @@ export default function Blog() {
           )}
 
           {/* Load More Button */}
-          {filteredPosts.length > 0 && (
+          {/* {filteredPosts.length > 0 && (
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -282,12 +282,12 @@ export default function Blog() {
                 Load More Articles
               </motion.button>
             </motion.div>
-          )}
+          )} */}
         </div>
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -320,7 +320,7 @@ export default function Blog() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
       <WhatsAppFloat />

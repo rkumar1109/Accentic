@@ -120,7 +120,7 @@ export default function About() {
                       <CheckCircle className="w-4 h-4 mr-2 text-indigo" />
                       {tag}
                     </span>
-                  ),
+                  )
                 )}
               </motion.div>
             </motion.div>
@@ -233,7 +233,7 @@ export default function About() {
                 Our Story
               </h2>
               <p className="text-lg text-darkBlue/70 mb-6 leading-relaxed">
-                Founded in 2025, Accentic Digital Solutions began as a small
+                Founded in 2025, Accentic Solutions began as a small
                 team of passionate developers and designers who believed that
                 every business deserves exceptional digital experiences.
               </p>
@@ -338,9 +338,9 @@ export default function About() {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, y: -5 }}
                 // className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-indigo/10"
-                className="group bg-white w-[350px] md:w-[600px] mx-auto ml-80 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-indigo/10"
+                className="group bg-white w-[850px] md:w-[350px] h-[600px] mx-auto ml-[160%] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-indigo/10"
               >
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-[400px] overflow-hidden">
                   <Image
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}

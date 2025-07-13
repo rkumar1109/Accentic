@@ -9,14 +9,14 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Accentic Digital Solutions - Fueling Growth with Creativity",
+  title: "Accentic Solutions - Fueling Growth with Creativity",
   description:
     "Professional digital agency specializing in web development, digital marketing, and creative solutions. Transform your business with our innovative approach.",
   keywords:
     "digital agency, web development, digital marketing, creative solutions, business growth",
-  authors: [{ name: "Accentic Digital Solutions" }],
+  authors: [{ name: "Accentic Solutions" }],
   openGraph: {
-    title: "Accentic Digital Solutions - Fueling Growth with Creativity",
+    title: "Accentic Solutions - Fueling Growth with Creativity",
     description:
       "Professional digital agency specializing in web development, digital marketing, and creative solutions.",
     type: "website",

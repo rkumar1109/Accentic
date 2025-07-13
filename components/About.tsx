@@ -63,7 +63,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-block glass-effect-dark text-indigo px-4 py-2 rounded-full text-sm font-medium mb-6"
             >
-              About Accentic Digital Solutions
+              About Accentic Solutions
             </motion.div>
 
             <h2 className="text-4xl md:text-5xl font-bold text-darkBlue mb-6 leading-tight">

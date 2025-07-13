@@ -98,7 +98,7 @@ function AnimatedGradientBackground() {
 }
 
 export default function Hero() {
-  const title = "Accentic Digital Solutions";
+  const title = "Accentic Solutions";
   const words = title.split(" ");
 
   return (

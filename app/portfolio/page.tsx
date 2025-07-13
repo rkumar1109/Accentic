@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { ExternalLink, Github, Calendar, Tag } from "lucide-react";
 import SwiperCarousel from "./Carousel";
+import VidCarousel from "./VidCarousel";
 
 const projects = [
   {
@@ -62,7 +63,7 @@ const projects = [
   {
     id: 4,
     title: "FitTracker Mobile App",
-    category: "Mobile",
+    category: "Gallery",
     description:
       "Cross-platform fitness tracking application with social features, workout planning, and integration with wearable devices.",
     image: "/logos/Amedore.jpg?height=300&width=600",
@@ -107,11 +108,7 @@ const projects = [
   },
 ];
 
-export const imgArray = projects
-  .filter((project) => project.image)
-  .map((project) => project.image);
-console.log(imgArray);
-const categories = ["All", "Web Development", "Design", "Marketing", "Mobile"];
+const categories = ["All", "Web Development", "Design", "Marketing", "Gallery"];
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -119,10 +116,17 @@ export default function Portfolio() {
     (typeof projects)[0] | null
   >(null);
 
+  // const filteredProjects =
+  //   activeCategory === "All" ?
+  //     projects.filter(
+  //       (project) => project.category === "Web Development" && "Design" && "Marketing"
+  //     )
+  //   : projects.filter((project) => project.category === activeCategory);
+
   const filteredProjects =
     activeCategory === "All" ?
-      projects.filter(
-        (project) => project.category === "Web Development" && "Design"
+      projects.filter((project) =>
+        ["Web Development", "Design", "Marketing"].includes(project.category)
       )
     : projects.filter((project) => project.category === activeCategory);
 
@@ -184,20 +188,89 @@ export default function Portfolio() {
       {/* Projects Grid */}
       <section className="py-20 bg-[#FAF5F1]">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => {
-              if (
-                project.category === "Mobile" ||
-                project.category === "Marketing"
-              ) {
-                return (
-                  <div key={project.id} className="col-span-full">
-                    <SwiperCarousel />
-                  </div>
-                );
-              }
+          {activeCategory === "Gallery" && (
+            <>
+              <h3 className="text-2xl font-bold text-[#2E2E2E] text-center mb-8">
+                Images
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredProjects.map((project, index) => {
+                  if (project.category === "Gallery") {
+                    return (
+                      <div key={project.id} className="col-span-full">
+                        <SwiperCarousel />
+                      </div>
+                    );
+                  }
 
-              return (
+                  return (
+                    <motion.div
+                      key={project.id}
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      onClick={() => setSelectedProject(project)}
+                      className="group w-90 aspect-square bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10 cursor-pointer"
+                    >
+                      {/* Image */}
+                      <div className="relative h-60 overflow-hidden h-[200px]">
+                        <img
+                          src={project.image || "/placeholder.svg"}
+                          alt={project.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute top-4 left-4">
+                          <span className="bg-[#C38E70] text-white px-3 py-1 rounded-full text-xs font-medium">
+                            {project.category}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Content */}
+                      <div className="pt-6 pb-10 px-6">
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className="text-xl font-bold text-[#2E2E2E] group-hover:text-[#C38E2E] transition-colors duration-300">
+                            {project.title}
+                          </h3>
+                          <span className="text-sm text-[#2E2E2E]/60">
+                            {project.date}
+                          </span>
+                        </div>
+                        {/* <p className="text-[#2E2E2E]/70 mb-4 leading-relaxed line-clamp-3">
+                      {project.description}
+                    </p> */}
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {project.technologies.slice(0, 3).map((tech) => (
+                            <span
+                              key={tech}
+                              className="bg-[#FAF5F1] text-[#37695F] px-2 py-1 rounded-full text-xs font-medium border border-[#37695F]/20"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                          {project.technologies.length > 3 && (
+                            <span className="bg-[#FAF5F1] text-[#37695F] px-2 py-1 rounded-full text-xs font-medium border border-[#37695F]/20">
+                              +{project.technologies.length - 3}
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-sm text-[#2E2E2E]/60">
+                          Client: {project.client}
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </>
+          )}
+
+          {/* Regular Projects Grid */}
+          {activeCategory !== "Gallery" && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
                   initial={{ opacity: 0, y: 50 }}
@@ -206,35 +279,15 @@ export default function Portfolio() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.02, y: -5 }}
                   onClick={() => setSelectedProject(project)}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10 cursor-pointer"
+                  className="group w-90 aspect-square bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10 cursor-pointer"
                 >
                   {/* Image */}
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-60 overflow-hidden h-[200px]">
                     <img
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2E2E2E]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="absolute bottom-4 left-4 right-4 flex justify-between">
-                        <motion.a
-                          href={project.liveUrl}
-                          onClick={(e) => e.stopPropagation()}
-                          whileHover={{ scale: 1.1 }}
-                          className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
-                        >
-                          <ExternalLink className="w-5 h-5" />
-                        </motion.a>
-                        <motion.a
-                          href={project.githubUrl}
-                          onClick={(e) => e.stopPropagation()}
-                          whileHover={{ scale: 1.1 }}
-                          className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
-                        >
-                          <Github className="w-5 h-5" />
-                        </motion.a>
-                      </div>
-                    </div>
                     <div className="absolute top-4 left-4">
                       <span className="bg-[#C38E70] text-white px-3 py-1 rounded-full text-xs font-medium">
                         {project.category}
@@ -243,18 +296,15 @@ export default function Portfolio() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
+                  <div className="pt-6 pb-10 px-6">
                     <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-xl font-bold text-[#2E2E2E] group-hover:text-[#C38E70] transition-colors duration-300">
+                      <h3 className="text-xl font-bold text-[#2E2E2E] group-hover:text-[#C38E2E] transition-colors duration-300">
                         {project.title}
                       </h3>
                       <span className="text-sm text-[#2E2E2E]/60">
                         {project.date}
                       </span>
                     </div>
-                    <p className="text-[#2E2E2E]/70 mb-4 leading-relaxed line-clamp-3">
-                      {project.description}
-                    </p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.slice(0, 3).map((tech) => (
                         <span
@@ -275,10 +325,38 @@ export default function Portfolio() {
                     </div>
                   </div>
                 </motion.div>
-              );
-            })}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
+
+        {/* Video Portfolio Section */}
+        {activeCategory === "Gallery" && (
+          <div className="mt-20">
+            <h3 className="text-2xl font-bold text-[#2E2E2E] text-center mb-8">
+              Videos
+            </h3>
+            <VidCarousel
+              videos={[
+                {
+                  id: "1",
+                  title: "Project Showcase - TechStart E-Commerce",
+                  youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                },
+                {
+                  id: "2",
+                  title: "GreenLife Brand Identity Design Process",
+                  youtubeUrl: "https://www.youtube.com/watch?v=9bZkp7q19f0",
+                },
+                {
+                  id: "3",
+                  title: "FinanceFlow Dashboard Demo",
+                  youtubeUrl: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+                },
+              ]}
+            />
+          </div>
+        )}
       </section>
 
       {/* Modal */}

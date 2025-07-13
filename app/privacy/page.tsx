@@ -98,7 +98,7 @@ export default function Privacy() {
                   Overview
                 </h2>
                 <p className="text-[#2E2E2E]/70 leading-relaxed">
-                  At Accentic Digital Solutions, we are committed to protecting
+                  At Accentic Solutions, we are committed to protecting
                   your privacy and ensuring the security of your personal
                   information. This Privacy Policy describes how we collect,
                   use, disclose, and safeguard your information when you visit

@@ -32,20 +32,28 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-[#FAF5F1]/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+        isScrolled ?
+          "bg-[#FAF5F1]/95 backdrop-blur-md shadow-lg"
+        : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
-          <motion.div whileHover={{ scale: 1.05 }} className="flex-shrink-0">
+          {/* <motion.div whileHover={{ scale: 1.05 }} className="flex-shrink-0">
             <Link href="/" className="text-2xl font-bold text-gradient">
               Accentic
             </Link>
+          </motion.div> */}
+          <motion.div whileHover={{ scale: 1.05 }} className="flex-shrink-0">
+            <Link href="/" className="flex items-center space-x-2">
+              <img
+                src="/logos/Accentic Solutions png icon.png"
+                alt="Accentic Logo"
+                className="h-16 w-auto"
+              />
+            </Link>
           </motion.div>
-
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
@@ -89,7 +97,9 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-[#2E2E2E] hover:text-[#C38E70] transition-colors duration-200"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ?
+                <X size={24} />
+              : <Menu size={24} />}
             </button>
           </div>
         </div>

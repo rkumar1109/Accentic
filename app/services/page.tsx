@@ -15,6 +15,7 @@ import {
   CheckCircle,
   MapPin,
 } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
@@ -207,17 +208,20 @@ export default function Services() {
 
                   {/* Price */}
                   <div className="flex items-center justify-between">
-                    <span className="text-lg font-semibold text-[#C38E70]">
+                    <Link
+                      href="/contact"
+                      className="text-lg font-semibold text-[#C38E70] hover:text-[#A76D4E] ml-20 transition-colors cursor-pointer focus:outline-none z-[1]"
+                    >
                       {service.price}
-                    </span>
-                    <motion.button
+                    </Link>
+                    {/* <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className="flex items-center space-x-2 text-[#37695F] hover:text-[#C38E70] transition-colors duration-200"
                     >
                       <span className="text-sm font-medium">Learn More</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-                    </motion.button>
+                    </motion.button> */}
                   </div>
                 </div>
 

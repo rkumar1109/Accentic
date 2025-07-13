@@ -85,7 +85,8 @@ export default function CTA() {
                   href="mailto:Accenticdigitalsolutions@gmail.com"
                   className="hover:text-cyan transition-colors duration-300"
                 >
-                  Accenticdigitalsolutions@gmail.com
+                  {/* Accenticdigitalsolutions@gmail.com */}
+                  Accenticsolutions@gmail.com
                 </a>
               </div>
             </motion.div>
@@ -107,9 +108,9 @@ export default function CTA() {
                   key={feature}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={
-                    isInView
-                      ? { opacity: 1, scale: 1 }
-                      : { opacity: 0, scale: 0.8 }
+                    isInView ?
+                      { opacity: 1, scale: 1 }
+                    : { opacity: 0, scale: 0.8 }
                   }
                   transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
                   className="flex items-center space-x-2 text-white/70"
