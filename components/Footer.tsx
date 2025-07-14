@@ -62,7 +62,7 @@ export default function Footer() {
             <Link href="/">
               <div className="flex items-center space-x-3">
                 <img
-                  src="/logos/Accentic Solutions png wht.png"
+                  src="/logos/mainLogo/Accentic Solutions png wht.png"
                   alt="Accentic Logo"
                   className="ml-10 h-48 w-auto"
                 />

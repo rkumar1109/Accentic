@@ -5,12 +5,10 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 
 const brands = [
-  { name: "CASMARA", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "Ministry.Pedicure", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "Dermalogica", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "TechCorp", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "InnovateLab", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "DigitalFlow", logo: "/placeholder.svg?height=60&width=120" },
+  { name: "CLSSYDINE", logo: "/logos/CLSSYDINE.jpg" },
+  { name: "B21", logo: "/logos/B21.png", bg: true },
+  { name: "Amedore", logo: "/logos/Amedore.jpg" },
+  { name: "Inkstories", logo: "/logos/inkstories logo-02.png" },
 ];
 
 export default function Brands() {
@@ -48,14 +46,30 @@ export default function Brands() {
               <motion.div
                 key={`${brand.name}-${index}`}
                 whileHover={{ scale: 1.1 }}
-                // className="flex-shrink-0 w-32 h-16 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-[#C38E70]/10"
                 className="flex-shrink-0 w-48 h-32 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-[#C38E70]/10"
               >
-                <img
-                  src={brand.logo || "/placeholder.svg"}
-                  alt={brand.name}
-                  className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
+                {brand.bg ?
+                  <div className="inline-block bg-black/80 rounded-lg p-2">
+                    <img
+                      src={brand.logo || "/placeholder.svg"}
+                      alt={brand.name}
+                      className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                : brand.logo === "/logos/inkstories logo-02.png" ?
+                  <div className="w-28 h-12 flex items-center justify-center mx-auto">
+                    <img
+                      src={brand.logo || "/placeholder.svg"}
+                      alt={brand.name}
+                      className="object-contain w-full h-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                : <img
+                    src={brand.logo || "/placeholder.svg"}
+                    alt={brand.name}
+                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                }
               </motion.div>
             ))}
           </motion.div>

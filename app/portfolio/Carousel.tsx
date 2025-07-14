@@ -10,35 +10,18 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 
-const adsImages = [
-  {
-    id: 1,
-    label: "B21-1",
-    imgURL: "/logos/b21-1.jpeg",
-  },
-  {
-    id: 2,
-    label: "Amedore",
-    imgURL: "/logos/Amedore.jpg",
-  },
-  {
-    id: 3,
-    label: "B21-2",
-    imgURL: "/logos/b21-2.jpeg",
-  },
-  {
-    id: 4,
-    label: "B21",
-    imgURL: "/logos/B21.png",
-  },
-  {
-    id: 5,
-    label: "CLSSYDINE",
-    imgURL: "/logos/CLSSYDINE.jpg",
-  },
-];
+// Accept images as a prop
+interface GalleryImage {
+  id: number;
+  label: string;
+  imgURL: string;
+}
 
-export default function SwiperCarousel({}) {
+interface SwiperCarouselProps {
+  images: GalleryImage[];
+}
+
+export default function SwiperCarousel({ images }: SwiperCarouselProps) {
   return (
     <div className="w-full h-full max-w-4xl px-4 mb-8 mx-auto">
       <Swiper
@@ -64,7 +47,7 @@ export default function SwiperCarousel({}) {
         modules={[Autoplay, Pagination, Navigation, EffectCoverflow]}
         className="rounded-[12px] shadow-[0_6px_20px_rgba(0,0,0,0.1)]"
       >
-        {adsImages.map((img) => (
+        {images.map((img) => (
           <SwiperSlide key={img.id} className="w-72">
             <img
               src={img.imgURL}

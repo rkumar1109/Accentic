@@ -105,18 +105,3 @@ export default function VidCarousel({ videos, className = "" }: VidCarouselProps
     </div>
   );
 }
-
-// Example usage:
-// const sampleVideos = [
-//   {
-//     id: "1",
-//     title: "Sample Video 1",
-//     youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-//   },
-//   {
-//     id: "2", 
-//     title: "Sample Video 2",
-//     youtubeUrl: "https://www.youtube.com/watch?v=9bZkp7q19f0",
-//   },
-//   // Add more videos as needed
-// ];

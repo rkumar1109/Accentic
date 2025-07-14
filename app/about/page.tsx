@@ -186,14 +186,13 @@ export default function About() {
             >
               <div className="aspect-video bg-gradient-to-br from-indigo/80 to-purple rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/logos/miscImages/our_story.png?height=400&width=600"
                   alt="Our team"
                   width={600}
                   height={400}
                   className="mix-blend-overlay opacity-90 rounded-2xl"
                 />
               </div>
-
               {/* Floating decorative elements inspired by the 3D image */}
               <motion.div
                 className="absolute -top-6 -left-6 p-4 bg-white rounded-xl shadow-lg flex items-center gap-3"
@@ -233,9 +232,9 @@ export default function About() {
                 Our Story
               </h2>
               <p className="text-lg text-darkBlue/70 mb-6 leading-relaxed">
-                Founded in 2025, Accentic Solutions began as a small
-                team of passionate developers and designers who believed that
-                every business deserves exceptional digital experiences.
+                Founded in 2025, Accentic Solutions began as a small team of
+                passionate developers and designers who believed that every
+                business deserves exceptional digital experiences.
               </p>
               <p className="text-lg text-darkBlue/70 mb-6 leading-relaxed">
                 Today, we've grown into a full-service digital agency that has

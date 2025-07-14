@@ -48,7 +48,7 @@ export default function Navbar() {
           <motion.div whileHover={{ scale: 1.05 }} className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2">
               <img
-                src="/logos/Accentic Solutions png icon.png"
+                src="/logos/mainLogo/Accentic Solutions png icon.png"
                 alt="Accentic Logo"
                 className="h-16 w-auto"
               />

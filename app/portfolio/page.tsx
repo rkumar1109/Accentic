@@ -9,6 +9,246 @@ import { ExternalLink, Github, Calendar, Tag } from "lucide-react";
 import SwiperCarousel from "./Carousel";
 import VidCarousel from "./VidCarousel";
 
+const galleryProjects = [
+  {
+    id: 101,
+    title: "Gallery Image 1",
+    category: "Gallery",
+    image: "/logos/gallery/DSC_8385-2.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 102,
+    title: "Gallery Image 2",
+    category: "Gallery",
+    image: "/logos/gallery/DSC_8389.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 103,
+    title: "Gallery Image 3",
+    category: "Gallery",
+    image: "/logos/gallery/DSC_8412.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 104,
+    title: "Gallery Image 4",
+    category: "Gallery",
+    image: "/logos/gallery/DSC_8427.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 105,
+    title: "Gallery Image 5",
+    category: "Gallery",
+    image: "/logos/gallery/DSC_8429.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 106,
+    title: "Gallery Image 6",
+    category: "Gallery",
+    image: "/logos/gallery/DSC_8455.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 107,
+    title: "Gallery Image 7",
+    category: "Gallery",
+    image: "/logos/gallery/DSC_8493.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 108,
+    title: "Gallery Image 8",
+    category: "Gallery",
+    image: "/logos/gallery/DSC_8499.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 109,
+    title: "Gallery Image 9",
+    category: "Gallery",
+    image: "/logos/gallery/DSC_8509-2.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+];
+
+const marketingProjects = [
+  {
+    id: 201,
+    title: "Marketing Image 1",
+    category: "Marketing",
+    image: "/logos/marketing/Bridal Makeup.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 202,
+    title: "Marketing Image 2",
+    category: "Marketing",
+    image: "/logos/marketing/Bridal Makeup 2.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 203,
+    title: "Marketing Image 3",
+    category: "Marketing",
+    image: "/logos/marketing/Holi Special Offer-1.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 204,
+    title: "Marketing Image 4",
+    category: "Marketing",
+    image: "/logos/marketing/Home Delivery Available2-1.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 205,
+    title: "Marketing Image 5",
+    category: "Marketing",
+    image: "/logos/marketing/Piercing Available2.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 206,
+    title: "Marketing Image 6",
+    category: "Marketing",
+    image: "/logos/marketing/Piercing Available3.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 207,
+    title: "Marketing Image 7",
+    category: "Marketing",
+    image: "/logos/marketing/Raja B21 offer.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 208,
+    title: "Marketing Image 8",
+    category: "Marketing",
+    image: "/logos/marketing/Raja Offer-1.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 209,
+    title: "Marketing Image 9",
+    category: "Marketing",
+    image: "/logos/marketing/Summer Offer AD-1.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+];
+
 const projects = [
   {
     id: 1,
@@ -80,7 +320,7 @@ const projects = [
     category: "Marketing",
     description:
       "Multi-channel digital marketing campaign for an online education platform, including SEO, PPC, social media, and content marketing.",
-    image: "/logos/CLSSYDINE.jpg?height=400&width=600",
+    image: "/logos/inkstories logo-02.png?height=400&width=600",
     technologies: ["Google Ads", "Facebook Ads", "SEMrush", "HubSpot"],
     liveUrl: "#",
     githubUrl: "#",
@@ -94,7 +334,7 @@ const projects = [
     category: "Web Development",
     description:
       "Comprehensive restaurant management system with POS integration, inventory tracking, staff scheduling, and customer analytics.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/logos/B21.png?height=400&width=600",
     technologies: ["Angular", "Express.js", "MySQL", "Socket.io"],
     liveUrl: "#",
     githubUrl: "#",
@@ -106,7 +346,7 @@ const projects = [
       "Cost optimization",
     ],
   },
-];
+].concat(galleryProjects, marketingProjects);
 
 const categories = ["All", "Web Development", "Design", "Marketing", "Gallery"];
 
@@ -126,7 +366,7 @@ export default function Portfolio() {
   const filteredProjects =
     activeCategory === "All" ?
       projects.filter((project) =>
-        ["Web Development", "Design", "Marketing"].includes(project.category)
+        ["Web Development", "Design"].includes(project.category)
       )
     : projects.filter((project) => project.category === activeCategory);
 
@@ -193,77 +433,13 @@ export default function Portfolio() {
               <h3 className="text-2xl font-bold text-[#2E2E2E] text-center mb-8">
                 Images
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredProjects.map((project, index) => {
-                  if (project.category === "Gallery") {
-                    return (
-                      <div key={project.id} className="col-span-full">
-                        <SwiperCarousel />
-                      </div>
-                    );
-                  }
-
-                  return (
-                    <motion.div
-                      key={project.id}
-                      initial={{ opacity: 0, y: 50 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      whileHover={{ scale: 1.02, y: -5 }}
-                      onClick={() => setSelectedProject(project)}
-                      className="group w-90 aspect-square bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10 cursor-pointer"
-                    >
-                      {/* Image */}
-                      <div className="relative h-60 overflow-hidden h-[200px]">
-                        <img
-                          src={project.image || "/placeholder.svg"}
-                          alt={project.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                        <div className="absolute top-4 left-4">
-                          <span className="bg-[#C38E70] text-white px-3 py-1 rounded-full text-xs font-medium">
-                            {project.category}
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Content */}
-                      <div className="pt-6 pb-10 px-6">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="text-xl font-bold text-[#2E2E2E] group-hover:text-[#C38E2E] transition-colors duration-300">
-                            {project.title}
-                          </h3>
-                          <span className="text-sm text-[#2E2E2E]/60">
-                            {project.date}
-                          </span>
-                        </div>
-                        {/* <p className="text-[#2E2E2E]/70 mb-4 leading-relaxed line-clamp-3">
-                      {project.description}
-                    </p> */}
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {project.technologies.slice(0, 3).map((tech) => (
-                            <span
-                              key={tech}
-                              className="bg-[#FAF5F1] text-[#37695F] px-2 py-1 rounded-full text-xs font-medium border border-[#37695F]/20"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                          {project.technologies.length > 3 && (
-                            <span className="bg-[#FAF5F1] text-[#37695F] px-2 py-1 rounded-full text-xs font-medium border border-[#37695F]/20">
-                              +{project.technologies.length - 3}
-                            </span>
-                          )}
-                        </div>
-                        <div className="text-sm text-[#2E2E2E]/60">
-                          Client: {project.client}
-                        </div>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
+              <SwiperCarousel
+                images={galleryProjects.map((img) => ({
+                  id: img.id,
+                  label: img.title,
+                  imgURL: img.image,
+                }))}
+              />
             </>
           )}
 
@@ -279,16 +455,82 @@ export default function Portfolio() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.02, y: -5 }}
                   onClick={() => setSelectedProject(project)}
-                  className="group w-90 aspect-square bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10 cursor-pointer"
+                  className={`group w-90 aspect-square bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10 cursor-pointer ${
+                    (
+                      activeCategory === "Marketing" &&
+                      project.category === "Marketing"
+                    ) ?
+                      "p-0"
+                    : ""
+                  }`}
                 >
                   {/* Image */}
-                  <div className="relative h-60 overflow-hidden h-[200px]">
-                    <img
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute top-4 left-4">
+                  <div
+                    className={`relative overflow-hidden ${
+                      (
+                        activeCategory === "Marketing" &&
+                        project.category === "Marketing"
+                      ) ?
+                        "h-full w-full min-h-[320px] flex items-stretch"
+                      : (
+                        activeCategory === "Web Development" &&
+                        project.category === "Web Development"
+                      ) ?
+                        "h-[220px]"
+                      : (
+                        activeCategory === "Design" &&
+                        project.category === "Design"
+                      ) ?
+                        "h-[180px]"
+                      : activeCategory === "All" ? "h-[200px]"
+                      : "h-60"
+                    } ${activeCategory === "Marketing" && project.category === "Marketing" ? "aspect-square" : "h-[200px]"}`}
+                  >
+                    {project.image.startsWith("/logos/B21.png") ?
+                      <div className="bg-[#2E2E2E] w-full h-full flex items-center justify-center rounded-2xl">
+                        <img
+                          src={project.image || "/placeholder.svg"}
+                          alt={project.title}
+                          className={`w-full h-full object-contain rounded-2xl`}
+                        />
+                      </div>
+                    : (
+                      project.image.startsWith("/logos/inkstories logo-02.png")
+                    ) ?
+                      <div className="w-full h-full flex items-center justify-center rounded-2xl bg-white">
+                        <img
+                          src={project.image || "/placeholder.svg"}
+                          alt={project.title}
+                          className="object-contain max-h-40 max-w-xs mx-auto rounded-2xl"
+                        />
+                      </div>
+                    : <img
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        className={`w-full h-full ${
+                          (
+                            activeCategory === "Marketing" &&
+                            project.category === "Marketing"
+                          ) ?
+                            "object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
+                          : (
+                            (activeCategory === "Web Development" &&
+                              project.category === "Web Development") ||
+                            (activeCategory === "Design" &&
+                              project.category === "Design") ||
+                            activeCategory === "All"
+                          ) ?
+                            "object-contain"
+                          : "object-cover"
+                        }`}
+                      />
+                    }
+                    {/* Overlay gradient on hover for Marketing */}
+                    {activeCategory === "Marketing" &&
+                      project.category === "Marketing" && (
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#C38E70]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl z-10" />
+                      )}
+                    <div className="absolute top-4 left-4 z-20">
                       <span className="bg-[#C38E70] text-white px-3 py-1 rounded-full text-xs font-medium">
                         {project.category}
                       </span>
@@ -296,7 +538,9 @@ export default function Portfolio() {
                   </div>
 
                   {/* Content */}
-                  <div className="pt-6 pb-10 px-6">
+                  <div
+                    className={`px-6 ${activeCategory === "Marketing" && project.category === "Marketing" ? "pt-4 pb-6" : "pt-6 pb-10"}`}
+                  >
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="text-xl font-bold text-[#2E2E2E] group-hover:text-[#C38E2E] transition-colors duration-300">
                         {project.title}

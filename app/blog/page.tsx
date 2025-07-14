@@ -8,83 +8,209 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { Calendar, User, ArrowRight, Search } from "lucide-react";
 
 const blogPosts = [
+  // Website Development Blogs
   {
     id: 1,
-    title: "The Future of Web Development: Trends to Watch in 2024",
+    title: "Why Website Development in Bhubaneswar Is Growing Rapidly in 2025",
     excerpt:
-      "Explore the latest trends shaping the web development landscape, from AI integration to progressive web apps.",
-    content: "Full article content would go here...",
-    author: "Sarah Johnson",
-    date: "2024-01-15",
+      "Explore why more businesses in Odisha are investing in web development and how local agencies are delivering top-notch solutions.",
+    content: "",
+    author: "Accentic Team",
+    date: "2025-01-01",
     category: "Web Development",
     image: "/placeholder.svg?height=300&width=500",
-    tags: ["React", "AI", "PWA", "Trends"],
-    readTime: "5 min read",
+    tags: ["Bhubaneswar", "Odisha", "Growth"],
+    readTime: "2 min read",
   },
   {
     id: 2,
-    title: "Digital Marketing Strategies That Actually Work",
+    title: "Static vs Dynamic Website – Which One’s Best for You?",
     excerpt:
-      "Discover proven digital marketing strategies that drive real results and maximize your ROI.",
-    content: "Full article content would go here...",
-    author: "David Thompson",
-    date: "2024-01-10",
-    category: "Marketing",
+      "Learn the pros and cons of static and dynamic websites from expert developers in Bhubaneswar, Odisha.",
+    content: "",
+    author: "Accentic Team",
+    date: "2025-01-02",
+    category: "Web Development",
     image: "/placeholder.svg?height=300&width=500",
-    tags: ["SEO", "PPC", "Social Media", "ROI"],
-    readTime: "7 min read",
+    tags: ["Static", "Dynamic", "Odisha"],
+    readTime: "2 min read",
   },
   {
     id: 3,
-    title: "Building Scalable SaaS Applications: Best Practices",
+    title: "Must-Have Features in Modern Business Websites (2025 Edition)",
     excerpt:
-      "Learn the essential principles and best practices for building scalable SaaS applications that grow with your business.",
-    content: "Full article content would go here...",
-    author: "Michael Chen",
-    date: "2024-01-05",
-    category: "Development",
+      "Whether you're in India or Odisha, here’s what your website must include to convert better and rank faster.",
+    content: "",
+    author: "Accentic Team",
+    date: "2025-01-03",
+    category: "Web Development",
     image: "/placeholder.svg?height=300&width=500",
-    tags: ["SaaS", "Scalability", "Architecture", "Best Practices"],
-    readTime: "10 min read",
+    tags: ["Features", "Conversion", "India"],
+    readTime: "2 min read",
   },
   {
     id: 4,
-    title: "The Psychology of User Experience Design",
+    title:
+      "5 Common Website Development Mistakes Businesses in Odisha Should Avoid",
     excerpt:
-      "Understanding user psychology is crucial for creating intuitive and engaging digital experiences.",
-    content: "Full article content would go here...",
-    author: "Emily Rodriguez",
-    date: "2023-12-28",
-    category: "Design",
+      "Avoid errors that reduce performance. Tips from a top website development company in Bhubaneswar.",
+    content: "",
+    author: "Accentic Team",
+    date: "2025-01-04",
+    category: "Web Development",
     image: "/placeholder.svg?height=300&width=500",
-    tags: ["UX", "Psychology", "Design", "User Research"],
-    readTime: "6 min read",
+    tags: ["Mistakes", "Performance", "Bhubaneswar"],
+    readTime: "2 min read",
   },
   {
     id: 5,
-    title: "Mobile-First Design: Why It Matters More Than Ever",
+    title:
+      "Custom Website Development Services in India: How to Choose the Right Partner",
     excerpt:
-      "With mobile traffic dominating the web, mobile-first design isn't just an option—it's essential.",
-    content: "Full article content would go here...",
-    author: "Sarah Johnson",
-    date: "2023-12-20",
-    category: "Design",
+      "A guide for Indian businesses to find the right web development partner, with a focus on affordability and quality.",
+    content: "",
+    author: "Accentic Team",
+    date: "2025-01-05",
+    category: "Web Development",
     image: "/placeholder.svg?height=300&width=500",
-    tags: ["Mobile", "Responsive", "Design", "UX"],
-    readTime: "4 min read",
+    tags: ["Custom", "Partner", "India"],
+    readTime: "2 min read",
   },
+  // Digital Marketing Blogs
   {
     id: 6,
-    title: "SEO in 2024: What's Changed and What Hasn't",
+    title:
+      "Top 7 Reasons to Hire a Digital Marketing Agency in Bhubaneswar Today",
     excerpt:
-      "Stay ahead of the curve with the latest SEO strategies and algorithm updates for 2024.",
-    content: "Full article content would go here...",
-    author: "David Thompson",
-    date: "2023-12-15",
+      "Discover how local agencies in Odisha help you increase visibility, leads, and sales effectively.",
+    content: "",
+    author: "Accentic Team",
+    date: "2025-01-06",
     category: "Marketing",
     image: "/placeholder.svg?height=300&width=500",
-    tags: ["SEO", "Google", "Algorithm", "Strategy"],
-    readTime: "8 min read",
+    tags: ["Digital Marketing", "Bhubaneswar", "Leads"],
+    readTime: "2 min read",
+  },
+  {
+    id: 7,
+    title: "What Makes a Good Digital Marketing Strategy in 2025?",
+    excerpt:
+      "Learn modern approaches that top digital marketing agencies in India are using for results.",
+    content: "",
+    author: "Accentic Team",
+    date: "2025-01-07",
+    category: "Marketing",
+    image: "/placeholder.svg?height=300&width=500",
+    tags: ["Strategy", "2025", "India"],
+    readTime: "2 min read",
+  },
+  {
+    id: 8,
+    title: "Digital Marketing Agency Near Me vs Freelancers – Which to Choose?",
+    excerpt:
+      "Explore the pros and cons of hiring a local agency vs individual marketers in Bhubaneswar.",
+    content: "",
+    author: "Accentic Team",
+    date: "2025-01-08",
+    category: "Marketing",
+    image: "/placeholder.svg?height=300&width=500",
+    tags: ["Agency", "Freelancer", "Bhubaneswar"],
+    readTime: "2 min read",
+  },
+  {
+    id: 9,
+    title:
+      "How Digital Marketing in Odisha Is Changing the Game for Local Brands",
+    excerpt:
+      "Explore how digital campaigns tailored for Odisha markets outperform generic strategies.",
+    content: "",
+    author: "Accentic Team",
+    date: "2025-01-09",
+    category: "Marketing",
+    image: "/placeholder.svg?height=300&width=500",
+    tags: ["Odisha", "Brands", "Digital"],
+    readTime: "2 min read",
+  },
+  {
+    id: 10,
+    title:
+      "How to Pick the Best Digital Marketing Agency for Your Startup in India",
+    excerpt:
+      "A startup-friendly guide to picking a trusted agency for long-term digital growth.",
+    content: "",
+    author: "Accentic Team",
+    date: "2025-01-10",
+    category: "Marketing",
+    image: "/placeholder.svg?height=300&width=500",
+    tags: ["Startup", "Agency", "India"],
+    readTime: "2 min read",
+  },
+  // Design Blogs
+  {
+    id: 11,
+    title: "The Psychology Behind Great Website Design That Converts",
+    excerpt:
+      "Design isn’t just looks. Learn how top agencies in Bhubaneswar craft sites that build trust and drive action.",
+    content: "",
+    author: "Accentic Team",
+    date: "2025-01-11",
+    category: "Design",
+    image: "/placeholder.svg?height=300&width=500",
+    tags: ["Psychology", "Design", "Conversion"],
+    readTime: "2 min read",
+  },
+  {
+    id: 12,
+    title: "Top UI/UX Trends in India to Follow in 2025",
+    excerpt:
+      "Stay updated with sleek, conversion-focused design trends used by leading digital agencies.",
+    content: "",
+    author: "Accentic Team",
+    date: "2025-01-12",
+    category: "Design",
+    image: "/placeholder.svg?height=300&width=500",
+    tags: ["UI/UX", "Trends", "India"],
+    readTime: "2 min read",
+  },
+  {
+    id: 13,
+    title:
+      "Why Mobile-First Design Matters More Than Ever in Odisha’s Digital Space",
+    excerpt:
+      "With more mobile users in Odisha, here’s how mobile-first designs help you grow faster.",
+    content: "",
+    author: "Accentic Team",
+    date: "2025-01-13",
+    category: "Design",
+    image: "/placeholder.svg?height=300&width=500",
+    tags: ["Mobile-First", "Odisha", "Growth"],
+    readTime: "2 min read",
+  },
+  {
+    id: 14,
+    title: "How Clean Design Helps Your Brand Look Premium Online",
+    excerpt:
+      "Discover why minimal design with smart structure is ruling the digital world in India.",
+    content: "",
+    author: "Accentic Team",
+    date: "2025-01-14",
+    category: "Design",
+    image: "/placeholder.svg?height=300&width=500",
+    tags: ["Clean Design", "Premium", "India"],
+    readTime: "2 min read",
+  },
+  {
+    id: 15,
+    title: "5 Must-Have Design Elements for a Professional Business Website",
+    excerpt:
+      "Learn what your homepage and inner pages must have to look modern and functional.",
+    content: "",
+    author: "Accentic Team",
+    date: "2025-01-15",
+    category: "Design",
+    image: "/placeholder.svg?height=300&width=500",
+    tags: ["Design Elements", "Professional", "Website"],
+    readTime: "2 min read",
   },
 ];
 
@@ -107,7 +233,7 @@ export default function Blog() {
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.tags.some((tag) =>
-        tag.toLowerCase().includes(searchTerm.toLowerCase()),
+        tag.toLowerCase().includes(searchTerm.toLowerCase())
       );
     return matchesCategory && matchesSearch;
   });
@@ -166,9 +292,9 @@ export default function Blog() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activeCategory === category
-                    ? "gradient-bg text-white shadow-lg"
-                    : "bg-[#FAF5F1] text-[#2E2E2E] hover:bg-[#C38E70]/10 border border-[#C38E70]/20"
+                  activeCategory === category ?
+                    "gradient-bg text-white shadow-lg"
+                  : "bg-[#FAF5F1] text-[#2E2E2E] hover:bg-[#C38E70]/10 border border-[#C38E70]/20"
                 }`}
               >
                 {category}
@@ -181,14 +307,13 @@ export default function Blog() {
       {/* Blog Posts */}
       <section className="py-20 bg-[#FAF5F1]">
         <div className="container mx-auto px-4 md:px-6">
-          {filteredPosts.length === 0 ? (
+          {filteredPosts.length === 0 ?
             <div className="text-center py-16">
               <p className="text-xl text-[#2E2E2E]/70">
                 No articles found matching your criteria.
               </p>
             </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          : <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.map((post, index) => (
                 <motion.article
                   key={post.id}
@@ -200,7 +325,7 @@ export default function Blog() {
                   className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10"
                 >
                   {/* Post Image */}
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-32 overflow-hidden">
                     <img
                       src={post.image || "/placeholder.svg"}
                       alt={post.title}
@@ -211,34 +336,33 @@ export default function Blog() {
                         {post.category}
                       </span>
                     </div>
-                    <div className="absolute top-4 right-4">
-                      <span className="bg-white/90 text-[#2E2E2E] px-3 py-1 rounded-full text-xs font-medium">
+                    <div className="absolute top-4 right-4 z-10">
+                      <span className="bg-[#C38E70]/90 text-white px-3 py-1 rounded-full text-xs font-bold border border-[#C38E70]/30 shadow">
                         {post.readTime}
                       </span>
                     </div>
                   </div>
 
-                  {/* Post Content */}
-                  <div className="p-6">
-                    <div className="flex items-center space-x-4 mb-4 text-sm text-[#2E2E2E]/60">
-                      <div className="flex items-center space-x-1">
-                        <User className="w-4 h-4" />
-                        <span>{post.author}</span>
-                      </div>
-                      <div className="flex items-center space-x-1">
-                        <Calendar className="w-4 h-4" />
-                        <span>{new Date(post.date).toLocaleDateString()}</span>
-                      </div>
+                  {/* Author, Date, ReadTime Row */}
+                  <div className="flex items-center justify-between px-6 pt-3 pb-1 text-xs text-[#2E2E2E]/60">
+                    <div className="flex items-center space-x-1">
+                      <User className="w-4 h-4" />
+                      <span>{post.author}</span>
                     </div>
+                    <div className="flex items-center space-x-1">
+                      <Calendar className="w-4 h-4" />
+                      <span>{new Date(post.date).toLocaleDateString()}</span>
+                    </div>
+                  </div>
 
+                  {/* Post Content */}
+                  <div className="p-6 pt-2">
                     <h2 className="text-xl font-bold text-[#2E2E2E] mb-3 group-hover:text-[#C38E70] transition-colors duration-300 line-clamp-2">
                       {post.title}
                     </h2>
-
                     <p className="text-[#2E2E2E]/70 mb-4 leading-relaxed line-clamp-3">
                       {post.excerpt}
                     </p>
-
                     {/* Tags */}
                     <div className="flex flex-wrap gap-2 mb-4">
                       {post.tags.slice(0, 3).map((tag) => (
@@ -250,20 +374,19 @@ export default function Blog() {
                         </span>
                       ))}
                     </div>
-
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className="flex items-center space-x-2 text-[#C38E70] hover:text-[#37695F] transition-colors duration-200 font-medium"
                     >
-                      <span>Read More</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                      {/* <span>Read More</span> */}
+                      {/* <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" /> */}
                     </motion.button>
                   </div>
                 </motion.article>
               ))}
             </div>
-          )}
+          }
 
           {/* Load More Button */}
           {/* {filteredPosts.length > 0 && (
