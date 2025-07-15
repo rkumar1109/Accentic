@@ -296,21 +296,17 @@ const projects = [
   },
   {
     id: 2,
-    title: "GreenLife Brand Identity",
+    title: "EduLearn Digital Campaign",
     category: "Design",
     description:
-      "Complete brand overhaul for an eco-friendly lifestyle company, including logo design, brand guidelines, packaging design, and marketing materials.",
+      "Multi-channel digital marketing campaign for an online education platform, including SEO, PPC, social media, and content marketing.",
     image: "/logos/B21.png?height=400&width=600",
-    technologies: ["Figma", "Illustrator", "Photoshop", "InDesign"],
+    technologies: ["Google Ads", "Facebook Ads", "SEMrush", "HubSpot"],
     liveUrl: "#",
     githubUrl: "#",
-    date: "2024",
-    client: "GreenLife Co.",
-    results: [
-      "40% brand recognition increase",
-      "25% sales growth",
-      "Award-winning design",
-    ],
+    date: "2023",
+    client: "EduLearn Platform",
+    results: ["400% lead increase", "200% ROI", "50% cost reduction"],
   },
   {
     id: 3,
@@ -342,17 +338,21 @@ const projects = [
   },
   {
     id: 5,
-    title: "EduLearn Digital Campaign",
+    title: "GreenLife Brand Identity",
     category: "Marketing",
     description:
-      "Multi-channel digital marketing campaign for an online education platform, including SEO, PPC, social media, and content marketing.",
+      "Complete brand overhaul for an eco-friendly lifestyle company, including logo design, brand guidelines, packaging design, and marketing materials.",
     image: "/logos/inkstories logo-02.png?height=400&width=600",
-    technologies: ["Google Ads", "Facebook Ads", "SEMrush", "HubSpot"],
+    technologies: ["Figma", "Illustrator", "Photoshop", "InDesign"],
     liveUrl: "#",
     githubUrl: "#",
-    date: "2023",
-    client: "EduLearn Platform",
-    results: ["400% lead increase", "200% ROI", "50% cost reduction"],
+    date: "2024",
+    client: "GreenLife Co.",
+    results: [
+      "40% brand recognition increase",
+      "25% sales growth",
+      "Award-winning design",
+    ],
   },
   {
     id: 6,
@@ -374,7 +374,7 @@ const projects = [
   },
 ].concat(galleryProjects, marketingProjects);
 
-const categories = ["All", "Web Development", "Design", "Marketing", "Gallery"];
+const categories = ["All", "Web Development", "Marketing", "Design", "Gallery"];
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -392,7 +392,7 @@ export default function Portfolio() {
   const filteredProjects =
     activeCategory === "All" ?
       projects.filter((project) =>
-        ["Web Development", "Design"].includes(project.category)
+        ["Web Development", "Marketing"].includes(project.category)
       )
     : projects.filter((project) => project.category === activeCategory);
 
@@ -402,6 +402,7 @@ export default function Portfolio() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
+      style={{ overflowX: "hidden" }}
       className="min-h-screen"
     >
       <Navbar />
@@ -552,8 +553,8 @@ export default function Portfolio() {
                       />
                     }
                     {/* Overlay gradient on hover for Marketing */}
-                    {activeCategory === "Design" &&
-                      project.category === "Design" && (
+                    {activeCategory === "Marketing" &&
+                      project.category === "Marketing" && (
                         <div className="absolute inset-0 bg-gradient-to-t from-[#C38E70]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl z-10" />
                       )}
                     <div className="absolute top-4 left-4 z-20">
