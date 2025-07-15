@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import Link from "next/link";
 
 export default function Privacy() {
   const sections = [
@@ -98,8 +99,8 @@ export default function Privacy() {
                   Overview
                 </h2>
                 <p className="text-[#2E2E2E]/70 leading-relaxed">
-                  At Accentic Solutions, we are committed to protecting
-                  your privacy and ensuring the security of your personal
+                  At Accentic Solutions, we are committed to protecting your
+                  privacy and ensuring the security of your personal
                   information. This Privacy Policy describes how we collect,
                   use, disclose, and safeguard your information when you visit
                   our website or use our services.
@@ -140,13 +141,15 @@ export default function Privacy() {
                   If you have any questions or concerns about our privacy
                   practices, we're here to help.
                 </p>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="gradient-bg text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  Contact Us
-                </motion.button>
+                <Link href="/contact">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="gradient-bg text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    Contact Us
+                  </motion.button>
+                </Link>
               </motion.div>
             </motion.div>
           </div>
