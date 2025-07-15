@@ -466,7 +466,7 @@ export default function Portfolio() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
       style={{ overflowX: "hidden" }}
-      className="min-h-screen"
+      className="min-h-screen scrollbar-hide"
     >
       <Navbar />
 
