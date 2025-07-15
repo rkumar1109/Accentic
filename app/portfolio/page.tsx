@@ -145,9 +145,9 @@ const galleryProjects = [
 const marketingProjects = [
   {
     id: 201,
-    title: "Marketing Image 1",
+    title: "inkstories logo-02",
     category: "Marketing",
-    image: "/logos/marketing/Bridal Makeup.jpg",
+    image: "/logos/inkstories logo-02.png",
     description: "",
     technologies: [],
     liveUrl: "",
@@ -158,9 +158,9 @@ const marketingProjects = [
   },
   {
     id: 202,
-    title: "Marketing Image 2",
+    title: "CLSSYDINE",
     category: "Marketing",
-    image: "/logos/marketing/Bridal Makeup 2.jpg",
+    image: "/logos/CLSSYDINE.jpg",
     description: "",
     technologies: [],
     liveUrl: "",
@@ -171,9 +171,9 @@ const marketingProjects = [
   },
   {
     id: 203,
-    title: "Marketing Image 3",
+    title: "B21",
     category: "Marketing",
-    image: "/logos/marketing/Holi Special Offer-1.jpg",
+    image: "/logos/B21.png",
     description: "",
     technologies: [],
     liveUrl: "",
@@ -184,9 +184,25 @@ const marketingProjects = [
   },
   {
     id: 204,
-    title: "Marketing Image 4",
+    title: "Amedore",
     category: "Marketing",
-    image: "/logos/marketing/Home Delivery Available2-1.jpg",
+    image: "/logos/Amedore.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+];
+
+const designProjects = [
+  {
+    id: 301,
+    title: "Business Without Digital Strategy",
+    category: "Design",
+    image: "/logos/design/Business Without Digital Strategy.jpg",
     description: "",
     technologies: [],
     liveUrl: "",
@@ -196,10 +212,10 @@ const marketingProjects = [
     results: [],
   },
   {
-    id: 205,
-    title: "Marketing Image 5",
-    category: "Marketing",
-    image: "/logos/marketing/Piercing Available2.jpg",
+    id: 303,
+    title: "Holi Special Offer-1",
+    category: "Design",
+    image: "/logos/design/Holi Special Offer-1.jpg",
     description: "",
     technologies: [],
     liveUrl: "",
@@ -209,10 +225,10 @@ const marketingProjects = [
     results: [],
   },
   {
-    id: 206,
-    title: "Marketing Image 6",
-    category: "Marketing",
-    image: "/logos/marketing/Piercing Available3.jpg",
+    id: 304,
+    title: "Home Delivery Available2-1",
+    category: "Design",
+    image: "/logos/design/Home Delivery Available2-1.jpg",
     description: "",
     technologies: [],
     liveUrl: "",
@@ -222,10 +238,10 @@ const marketingProjects = [
     results: [],
   },
   {
-    id: 207,
-    title: "Marketing Image 7",
-    category: "Marketing",
-    image: "/logos/marketing/Raja B21 offer.jpg",
+    id: 305,
+    title: "Bridal Makeup",
+    category: "Design",
+    image: "/logos/design/Bridal Makeup.jpg",
     description: "",
     technologies: [],
     liveUrl: "",
@@ -235,10 +251,10 @@ const marketingProjects = [
     results: [],
   },
   {
-    id: 208,
-    title: "Marketing Image 8",
-    category: "Marketing",
-    image: "/logos/marketing/Raja Offer-1.jpg",
+    id: 306,
+    title: "Bridal Makeup 2",
+    category: "Design",
+    image: "/logos/design/Bridal Makeup 2.jpg",
     description: "",
     technologies: [],
     liveUrl: "",
@@ -248,10 +264,10 @@ const marketingProjects = [
     results: [],
   },
   {
-    id: 209,
-    title: "Marketing Image 9",
-    category: "Marketing",
-    image: "/logos/marketing/Summer Offer AD-1.jpg",
+    id: 307,
+    title: "Piercing Available2",
+    category: "Design",
+    image: "/logos/design/Piercing Available2.jpg",
     description: "",
     technologies: [],
     liveUrl: "",
@@ -261,10 +277,75 @@ const marketingProjects = [
     results: [],
   },
   {
-    id: 210,
-    title: "Marketing Image 10",
-    category: "Marketing",
-    image: "/logos/marketing/Business Without Digital Strategy.jpg",
+    id: 308,
+    title: "Raja Offer-1",
+    category: "Design",
+    image: "/logos/design/Raja Offer-1.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 309,
+    title: "Piercing Available3",
+    category: "Design",
+    image: "/logos/design/Piercing Available3.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 310,
+    title: "Summer Offer AD-1",
+    category: "Design",
+    image: "/logos/design/Summer Offer AD-1.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 311,
+    title: "Raja B21 offer",
+    category: "Design",
+    image: "/logos/design/Raja B21 offer.jpg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 312,
+    title: "b21-2",
+    category: "Design",
+    image: "/logos/design/b21-2.jpeg",
+    description: "",
+    technologies: [],
+    liveUrl: "",
+    githubUrl: "",
+    date: "",
+    client: "",
+    results: [],
+  },
+  {
+    id: 313,
+    title: "b21-1",
+    category: "Design",
+    image: "/logos/design/b21-1.jpeg",
     description: "",
     technologies: [],
     liveUrl: "",
@@ -337,24 +418,6 @@ const projects = [
     results: ["100K+ downloads", "4.8 app store rating", "Featured by Apple"],
   },
   {
-    id: 5,
-    title: "GreenLife Brand Identity",
-    category: "Marketing",
-    description:
-      "Complete brand overhaul for an eco-friendly lifestyle company, including logo design, brand guidelines, packaging design, and marketing materials.",
-    image: "/logos/inkstories logo-02.png?height=400&width=600",
-    technologies: ["Figma", "Illustrator", "Photoshop", "InDesign"],
-    liveUrl: "#",
-    githubUrl: "#",
-    date: "2024",
-    client: "GreenLife Co.",
-    results: [
-      "40% brand recognition increase",
-      "25% sales growth",
-      "Award-winning design",
-    ],
-  },
-  {
     id: 6,
     title: "RestaurantPro Management System",
     category: "Web Development",
@@ -372,9 +435,9 @@ const projects = [
       "Cost optimization",
     ],
   },
-].concat(galleryProjects, marketingProjects);
+].concat(galleryProjects, marketingProjects, designProjects);
 
-const categories = ["All", "Web Development", "Marketing", "Design", "Gallery"];
+const categories = ["All", "Web Development", "Design", "Marketing", "Gallery"];
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -484,8 +547,10 @@ export default function Portfolio() {
                   onClick={() => setSelectedProject(project)}
                   className={`group w-90 aspect-square bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10 cursor-pointer ${
                     (
-                      activeCategory === "Marketing" &&
-                      project.category === "Marketing"
+                      (activeCategory === "Marketing" &&
+                        project.category === "Marketing") ||
+                      (activeCategory === "Design" &&
+                        project.category === "Design")
                     ) ?
                       "p-0"
                     : ""
@@ -495,8 +560,10 @@ export default function Portfolio() {
                   <div
                     className={`relative overflow-hidden ${
                       (
-                        activeCategory === "Marketing" &&
-                        project.category === "Marketing"
+                        (activeCategory === "Marketing" &&
+                          project.category === "Marketing") ||
+                        (activeCategory === "Design" &&
+                          project.category === "Design")
                       ) ?
                         "h-full w-full min-h-[320px] flex items-stretch"
                       : (
@@ -511,7 +578,7 @@ export default function Portfolio() {
                         "h-[180px]"
                       : activeCategory === "All" ? "h-[200px]"
                       : "h-60"
-                    } ${activeCategory === "Marketing" && project.category === "Marketing" ? "aspect-square" : "h-[200px]"}`}
+                    } ${(activeCategory === "Marketing" && project.category === "Marketing") || (activeCategory === "Design" && project.category === "Design") ? "aspect-square" : "h-[200px]"}`}
                   >
                     {project.image.startsWith("/logos/B21.png") ?
                       <div className="bg-[#2E2E2E] w-full h-full flex items-center justify-center rounded-2xl">
@@ -531,13 +598,24 @@ export default function Portfolio() {
                           className="object-contain max-h-40 max-w-xs mx-auto rounded-2xl"
                         />
                       </div>
+                    : (
+                      project.image === "/logos/Amedore.jpg" ||
+                      project.image === "/logos/CLSSYDINE.jpg"
+                    ) ?
+                      <img
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        className="w-full h-full object-contain rounded-2xl"
+                      />
                     : <img
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
                         className={`w-full h-full ${
                           (
-                            activeCategory === "Marketing" &&
-                            project.category === "Marketing"
+                            (activeCategory === "Marketing" &&
+                              project.category === "Marketing") ||
+                            (activeCategory === "Design" &&
+                              project.category === "Design")
                           ) ?
                             "object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
                           : (
@@ -545,6 +623,8 @@ export default function Portfolio() {
                               project.category === "Web Development") ||
                             (activeCategory === "Marketing" &&
                               project.category === "Marketing") ||
+                            (activeCategory === "Design" &&
+                              project.category === "Design") ||
                             activeCategory === "All"
                           ) ?
                             "object-contain"
@@ -553,10 +633,12 @@ export default function Portfolio() {
                       />
                     }
                     {/* Overlay gradient on hover for Marketing */}
-                    {activeCategory === "Marketing" &&
-                      project.category === "Marketing" && (
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#C38E70]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl z-10" />
-                      )}
+                    {((activeCategory === "Marketing" &&
+                      project.category === "Marketing") ||
+                      (activeCategory === "Design" &&
+                        project.category === "Design")) && (
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#C38E70]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl z-10" />
+                    )}
                     <div className="absolute top-4 left-4 z-20">
                       <span className="bg-[#C38E70] text-white px-3 py-1 rounded-full text-xs font-medium">
                         {project.category}
@@ -566,7 +648,7 @@ export default function Portfolio() {
 
                   {/* Content */}
                   <div
-                    className={`px-6 ${activeCategory === "Marketing" && project.category === "Marketing" ? "pt-4 pb-6" : "pt-6 pb-10"}`}
+                    className={`px-6 ${(activeCategory === "Marketing" && project.category === "Marketing") || (activeCategory === "Design" && project.category === "Design") ? "pt-4 pb-6" : "pt-6 pb-10"}`}
                   >
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="text-xl font-bold text-[#2E2E2E] group-hover:text-[#C38E2E] transition-colors duration-300">
