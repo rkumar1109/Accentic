@@ -542,8 +542,8 @@ export default function Portfolio() {
                           : (
                             (activeCategory === "Web Development" &&
                               project.category === "Web Development") ||
-                            (activeCategory === "Design" &&
-                              project.category === "Design") ||
+                            (activeCategory === "Marketing" &&
+                              project.category === "Marketing") ||
                             activeCategory === "All"
                           ) ?
                             "object-contain"
@@ -552,8 +552,8 @@ export default function Portfolio() {
                       />
                     }
                     {/* Overlay gradient on hover for Marketing */}
-                    {activeCategory === "Marketing" &&
-                      project.category === "Marketing" && (
+                    {activeCategory === "Design" &&
+                      project.category === "Design" && (
                         <div className="absolute inset-0 bg-gradient-to-t from-[#C38E70]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl z-10" />
                       )}
                     <div className="absolute top-4 left-4 z-20">
