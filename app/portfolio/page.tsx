@@ -455,7 +455,7 @@ export default function Portfolio() {
   const filteredProjects =
     activeCategory === "All" ?
       projects.filter((project) =>
-        ["Web Development", "Marketing"].includes(project.category)
+        ["Web Development", "Marketing", "Design"].includes(project.category)
       )
     : projects.filter((project) => project.category === activeCategory);
 
