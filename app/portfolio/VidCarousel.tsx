@@ -46,25 +46,18 @@ export default function VidCarousel({ videos, className = "" }: VidCarouselProps
   return (
     <div className={`w-full max-w-6xl px-4 mb-8 mx-auto ${className}`}>
       <Swiper
-        effect="coverflow"
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={1}
         breakpoints={{
           640: {
-            slidesPerView: 2,
+            slidesPerView: 3,
           },
           1024: {
             slidesPerView: 3,
           },
         }}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
+        spaceBetween={8}
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
@@ -74,7 +67,7 @@ export default function VidCarousel({ videos, className = "" }: VidCarouselProps
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation, EffectCoverflow]}
-        className="rounded-[12px] shadow-[0_6px_20px_rgba(0,0,0,0.1)]"
+        className="rounded-[16px] shadow-[0_6px_20px_rgba(0,0,0,0.1)]"
       >
         {videos.map((video) => {
           const videoId = getYouTubeVideoId(video.youtubeUrl);
@@ -83,11 +76,11 @@ export default function VidCarousel({ videos, className = "" }: VidCarouselProps
 
           return (
             <SwiperSlide key={video.id} className="w-full">
-              <div className="relative w-full h-[300px] md:h-[400px] rounded-[12px] overflow-hidden">
+              <div className="relative w-full h-[420px] md:h-[520px] rounded-[16px] overflow-hidden">
                 <iframe
                   src={embedUrl}
                   title={video.title}
-                  className="w-full h-full rounded-[12px]"
+                  className="w-full h-full rounded-[16px]"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen

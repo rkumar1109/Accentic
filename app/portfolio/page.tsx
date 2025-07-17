@@ -8,436 +8,14 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { ExternalLink, Github, Calendar, Tag } from "lucide-react";
 import SwiperCarousel from "./Carousel";
 import VidCarousel from "./VidCarousel";
-
-const galleryProjects = [
-  {
-    id: 101,
-    title: "Gallery Image 1",
-    category: "Gallery",
-    image: "/logos/gallery/DSC_8385-2.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 102,
-    title: "Gallery Image 2",
-    category: "Gallery",
-    image: "/logos/gallery/DSC_8389.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 103,
-    title: "Gallery Image 3",
-    category: "Gallery",
-    image: "/logos/gallery/DSC_8412.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 104,
-    title: "Gallery Image 4",
-    category: "Gallery",
-    image: "/logos/gallery/DSC_8427.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 105,
-    title: "Gallery Image 5",
-    category: "Gallery",
-    image: "/logos/gallery/DSC_8429.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 106,
-    title: "Gallery Image 6",
-    category: "Gallery",
-    image: "/logos/gallery/DSC_8455.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 107,
-    title: "Gallery Image 7",
-    category: "Gallery",
-    image: "/logos/gallery/DSC_8493.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 108,
-    title: "Gallery Image 8",
-    category: "Gallery",
-    image: "/logos/gallery/DSC_8499.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 109,
-    title: "Gallery Image 9",
-    category: "Gallery",
-    image: "/logos/gallery/DSC_8509-2.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 110,
-    title: "Gallery Image 10",
-    category: "Gallery",
-    image: "/logos/gallery/Business Without Digital Strategy.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-];
-
-const marketingProjects = [
-  {
-    id: 201,
-    title: "inkstories logo-02",
-    category: "Marketing",
-    image: "/logos/inkstories logo-02.png",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 202,
-    title: "CLSSYDINE",
-    category: "Marketing",
-    image: "/logos/CLSSYDINE.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 203,
-    title: "B21",
-    category: "Marketing",
-    image: "/logos/B21.png",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 204,
-    title: "Amedore",
-    category: "Marketing",
-    image: "/logos/Amedore.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-];
-
-const designProjects = [
-  {
-    id: 301,
-    title: "Business Without Digital Strategy",
-    category: "Design",
-    image: "/logos/design/Business Without Digital Strategy.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 303,
-    title: "Holi Special Offer-1",
-    category: "Design",
-    image: "/logos/design/Holi Special Offer-1.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 304,
-    title: "Home Delivery Available2-1",
-    category: "Design",
-    image: "/logos/design/Home Delivery Available2-1.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 305,
-    title: "Bridal Makeup",
-    category: "Design",
-    image: "/logos/design/Bridal Makeup.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 306,
-    title: "Bridal Makeup 2",
-    category: "Design",
-    image: "/logos/design/Bridal Makeup 2.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 307,
-    title: "Piercing Available2",
-    category: "Design",
-    image: "/logos/design/Piercing Available2.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 308,
-    title: "Raja Offer-1",
-    category: "Design",
-    image: "/logos/design/Raja Offer-1.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 309,
-    title: "Piercing Available3",
-    category: "Design",
-    image: "/logos/design/Piercing Available3.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 310,
-    title: "Summer Offer AD-1",
-    category: "Design",
-    image: "/logos/design/Summer Offer AD-1.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 311,
-    title: "Raja B21 offer",
-    category: "Design",
-    image: "/logos/design/Raja B21 offer.jpg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 312,
-    title: "b21-2",
-    category: "Design",
-    image: "/logos/design/b21-2.jpeg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-  {
-    id: 313,
-    title: "b21-1",
-    category: "Design",
-    image: "/logos/design/b21-1.jpeg",
-    description: "",
-    technologies: [],
-    liveUrl: "",
-    githubUrl: "",
-    date: "",
-    client: "",
-    results: [],
-  },
-];
-
-const projects = [
-  {
-    id: 1,
-    title: "TechStart E-Commerce Platform",
-    category: "Web Development",
-    description:
-      "A comprehensive e-commerce solution with advanced features including real-time inventory management, multi-payment gateway integration, and AI-powered product recommendations.",
-    image: "/logos/Amedore.jpg?height=300&width=600",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe", "AWS"],
-    liveUrl: "#",
-    githubUrl: "#",
-    date: "2024",
-    client: "TechStart Inc.",
-    results: [
-      "300% increase in sales",
-      "50% faster checkout process",
-      "99.9% uptime",
-    ],
-  },
-  {
-    id: 2,
-    title: "EduLearn Digital Campaign",
-    category: "Design",
-    description:
-      "Multi-channel digital marketing campaign for an online education platform, including SEO, PPC, social media, and content marketing.",
-    image: "/logos/B21.png?height=400&width=600",
-    technologies: ["Google Ads", "Facebook Ads", "SEMrush", "HubSpot"],
-    liveUrl: "#",
-    githubUrl: "#",
-    date: "2023",
-    client: "EduLearn Platform",
-    results: ["400% lead increase", "200% ROI", "50% cost reduction"],
-  },
-  {
-    id: 3,
-    title: "FinanceFlow SaaS Dashboard",
-    category: "Web Development",
-    description:
-      "A sophisticated financial analytics dashboard with real-time data visualization, automated reporting, and advanced security features.",
-    image: "/logos/CLSSYDINE.jpg?height=400&width=600",
-    technologies: ["Vue.js", "D3.js", "Python", "PostgreSQL", "Docker"],
-    liveUrl: "#",
-    githubUrl: "#",
-    date: "2023",
-    client: "FinanceFlow Ltd.",
-    results: ["60% time savings", "Real-time insights", "Enterprise security"],
-  },
-  {
-    id: 4,
-    title: "FitTracker Mobile App",
-    category: "Gallery",
-    description:
-      "Cross-platform fitness tracking application with social features, workout planning, and integration with wearable devices.",
-    image: "/logos/Amedore.jpg?height=300&width=600",
-    technologies: ["React Native", "Firebase", "Redux", "HealthKit"],
-    liveUrl: "#",
-    githubUrl: "#",
-    date: "2023",
-    client: "FitTracker Inc.",
-    results: ["100K+ downloads", "4.8 app store rating", "Featured by Apple"],
-  },
-  {
-    id: 6,
-    title: "RestaurantPro Management System",
-    category: "Web Development",
-    description:
-      "Comprehensive restaurant management system with POS integration, inventory tracking, staff scheduling, and customer analytics.",
-    image: "/logos/B21.png?height=400&width=600",
-    technologies: ["Angular", "Express.js", "MySQL", "Socket.io"],
-    liveUrl: "#",
-    githubUrl: "#",
-    date: "2022",
-    client: "RestaurantPro Chain",
-    results: [
-      "30% efficiency increase",
-      "Real-time operations",
-      "Cost optimization",
-    ],
-  },
-].concat(galleryProjects, marketingProjects, designProjects);
-
-const categories = ["All", "Web Development", "Design", "Marketing", "Gallery"];
+import {
+  projects,
+  galleryProjects,
+  portfolioVideos,
+  categories,
+  // marketingProjects, // not used directly
+  // designProjects, // not used directly
+} from "./ProjectConObj";
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -535,7 +113,7 @@ export default function Portfolio() {
 
           {/* Regular Projects Grid */}
           {activeCategory !== "Gallery" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
@@ -545,137 +123,43 @@ export default function Portfolio() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.02, y: -5 }}
                   onClick={() => setSelectedProject(project)}
-                  className={`group w-90 aspect-square bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10 cursor-pointer ${
+                  className={`relative group w-full aspect-[4/5] bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10 cursor-pointer sm:w-full sm:max-w-sm sm:mx-auto sm:aspect-[4/5] md:w-full md:aspect-[4/5] ${
                     (
                       (activeCategory === "Marketing" &&
                         project.category === "Marketing") ||
                       (activeCategory === "Design" &&
                         project.category === "Design")
                     ) ?
-                      "p-0"
+                      "p-0 shadow-2xl"
                     : ""
                   }`}
                 >
-                  {/* Image */}
-                  <div
-                    className={`relative overflow-hidden ${
-                      (
-                        (activeCategory === "Marketing" &&
-                          project.category === "Marketing") ||
-                        (activeCategory === "Design" &&
-                          project.category === "Design")
-                      ) ?
-                        "h-full w-full min-h-[320px] flex items-stretch"
-                      : (
-                        activeCategory === "Web Development" &&
-                        project.category === "Web Development"
-                      ) ?
-                        "h-[220px]"
-                      : (
-                        activeCategory === "Design" &&
-                        project.category === "Design"
-                      ) ?
-                        "h-[180px]"
-                      : activeCategory === "All" ? "h-[200px]"
-                      : "h-60"
-                    } ${(activeCategory === "Marketing" && project.category === "Marketing") || (activeCategory === "Design" && project.category === "Design") ? "aspect-square" : "h-[200px]"}`}
-                  >
-                    {project.image.startsWith("/logos/B21.png") ?
-                      <div className="bg-[#2E2E2E] w-full h-full flex items-center justify-center rounded-2xl">
-                        <img
-                          src={project.image || "/placeholder.svg"}
-                          alt={project.title}
-                          className={`w-full h-full object-contain rounded-2xl`}
-                        />
-                      </div>
-                    : (
-                      project.image.startsWith("/logos/inkstories logo-02.png")
-                    ) ?
-                      <div className="w-full h-full flex items-center justify-center rounded-2xl bg-white">
-                        <img
-                          src={project.image || "/placeholder.svg"}
-                          alt={project.title}
-                          className="object-contain max-h-40 max-w-xs mx-auto rounded-2xl"
-                        />
-                      </div>
-                    : (
-                      project.image === "/logos/Amedore.jpg" ||
-                      project.image === "/logos/CLSSYDINE.jpg"
-                    ) ?
-                      <img
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.title}
-                        className="w-full h-full object-contain rounded-2xl"
-                      />
-                    : <img
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.title}
-                        className={`w-full h-full ${
-                          (
-                            (activeCategory === "Marketing" &&
-                              project.category === "Marketing") ||
-                            (activeCategory === "Design" &&
-                              project.category === "Design")
-                          ) ?
-                            "object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
-                          : (
-                            (activeCategory === "Web Development" &&
-                              project.category === "Web Development") ||
-                            (activeCategory === "Marketing" &&
-                              project.category === "Marketing") ||
-                            (activeCategory === "Design" &&
-                              project.category === "Design") ||
-                            activeCategory === "All"
-                          ) ?
-                            "object-contain"
-                          : "object-cover"
-                        }`}
-                      />
-                    }
-                    {/* Overlay gradient on hover for Marketing */}
-                    {((activeCategory === "Marketing" &&
-                      project.category === "Marketing") ||
-                      (activeCategory === "Design" &&
-                        project.category === "Design")) && (
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#C38E70]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl z-10" />
-                    )}
-                    <div className="absolute top-4 left-4 z-20">
-                      <span className="bg-[#C38E70] text-white px-3 py-1 rounded-full text-xs font-medium">
-                        {project.category}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div
-                    className={`px-6 ${(activeCategory === "Marketing" && project.category === "Marketing") || (activeCategory === "Design" && project.category === "Design") ? "pt-4 pb-6" : "pt-6 pb-10"}`}
-                  >
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-xl font-bold text-[#2E2E2E] group-hover:text-[#C38E2E] transition-colors duration-300">
-                        {project.title}
-                      </h3>
-                      <span className="text-sm text-[#2E2E2E]/60">
-                        {project.date}
-                      </span>
-                    </div>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.slice(0, 3).map((tech) => (
-                        <span
-                          key={tech}
-                          className="bg-[#FAF5F1] text-[#37695F] px-2 py-1 rounded-full text-xs font-medium border border-[#37695F]/20"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                      {project.technologies.length > 3 && (
-                        <span className="bg-[#FAF5F1] text-[#37695F] px-2 py-1 rounded-full text-xs font-medium border border-[#37695F]/20">
-                          +{project.technologies.length - 3}
-                        </span>
+                  <div className="relative w-full h-full min-h-[320px] aspect-[4/5] flex items-stretch bg-white">
+                    {project.image &&
+                      project.image.startsWith("/logos/B21.png") && (
+                        <div className="absolute inset-0 bg-black/70 z-10 rounded-2xl pointer-events-none" />
                       )}
-                    </div>
-                    <div className="text-sm text-[#2E2E2E]/60">
-                      Client: {project.client}
-                    </div>
+                    {project.image &&
+                      project.image.startsWith("/logos/CLSSYDINE.jpg") && (
+                        <div className="absolute inset-0 bg-white/70 z-10 rounded-2xl pointer-events-none" />
+                      )}
+                    <img
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      className={`w-full h-full object-contain rounded-2xl${project.image && (project.image.startsWith("/logos/B21.png") || project.image.startsWith("/logos/CLSSYDINE.jpg")) ? " relative z-20 drop-shadow-lg" : ""}`}
+                    />
+                  </div>
+                  {/* Overlay gradient on hover for Marketing */}
+                  {((activeCategory === "Marketing" &&
+                    project.category === "Marketing") ||
+                    (activeCategory === "Design" &&
+                      project.category === "Design")) && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#C38E70]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl z-10" />
+                  )}
+                  <div className="absolute top-4 left-4 z-20">
+                    <span className="bg-[#C38E70] text-white px-3 py-1 rounded-full text-xs font-medium">
+                      {project.category}
+                    </span>
                   </div>
                 </motion.div>
               ))}
@@ -689,25 +173,7 @@ export default function Portfolio() {
             <h3 className="text-2xl font-bold text-[#2E2E2E] text-center mb-8">
               Videos
             </h3>
-            <VidCarousel
-              videos={[
-                {
-                  id: "1",
-                  title: "Project Showcase - TechStart E-Commerce",
-                  youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                },
-                {
-                  id: "2",
-                  title: "GreenLife Brand Identity Design Process",
-                  youtubeUrl: "https://www.youtube.com/watch?v=9bZkp7q19f0",
-                },
-                {
-                  id: "3",
-                  title: "FinanceFlow Dashboard Demo",
-                  youtubeUrl: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
-                },
-              ]}
-            />
+            <VidCarousel videos={portfolioVideos} />
           </div>
         )}
       </section>
@@ -733,13 +199,39 @@ export default function Portfolio() {
             <div className="relative">
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 w-8 h-8 bg-[#2E2E2E]/10 hover:bg-[#2E2E2E]/20 rounded-full flex items-center justify-center transition-colors duration-200 z-10"
-              ></button>
-              <img
-                src={selectedProject.image || "/placeholder.svg"}
-                alt={selectedProject.title}
-                className="w-full h-64 object-cover"
-              />
+                className="absolute top-4 right-4 w-10 h-10 bg-white/80 hover:bg-white text-[#2E2E2E] rounded-full flex items-center justify-center transition-colors duration-200 z-20 shadow-md border border-[#C38E70]/40 backdrop-blur"
+                aria-label="Close"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+              <div className="relative">
+                {selectedProject.image &&
+                  selectedProject.image.startsWith("/logos/B21.png") && (
+                    <div className="absolute inset-0 bg-black/70 z-10 rounded-2xl pointer-events-none" />
+                  )}
+                {selectedProject.image &&
+                  selectedProject.image.startsWith("/logos/CLSSYDINE.jpg") && (
+                    <div className="absolute inset-0 bg-white/70 z-10 rounded-2xl pointer-events-none" />
+                  )}
+                <img
+                  src={selectedProject.image || "/placeholder.svg"}
+                  alt={selectedProject.title}
+                  className={`w-full h-64 object-cover rounded-2xl${selectedProject.image && (selectedProject.image.startsWith("/logos/B21.png") || selectedProject.image.startsWith("/logos/CLSSYDINE.jpg")) ? " relative z-20 drop-shadow-lg" : ""}`}
+                />
+              </div>
             </div>
 
             {/* Modal Body */}
@@ -758,70 +250,78 @@ export default function Portfolio() {
               <h2 className="text-3xl font-bold text-[#2E2E2E] mb-2">
                 {selectedProject.title}
               </h2>
-              <p className="text-[#C38E70] font-medium mb-6">
-                Client: {selectedProject.client}
-              </p>
+              {selectedProject.client && (
+                <p className="text-[#C38E70] font-medium mb-6">
+                  Client: {selectedProject.client}
+                </p>
+              )}
 
               <p className="text-[#2E2E2E]/70 mb-8 leading-relaxed text-lg">
                 {selectedProject.description}
               </p>
 
               {/* Technologies */}
-              <div className="mb-8">
-                <h3 className="text-lg font-semibold text-[#2E2E2E] mb-4 flex items-center">
-                  <Tag className="w-5 h-5 mr-2" />
-                  Technologies Used
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {selectedProject.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="bg-[#FAF5F1] text-[#37695F] px-4 py-2 rounded-full font-medium border border-[#37695F]/20"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              {selectedProject.category !== "Design" && (
+                <div className="mb-8">
+                  <h3 className="text-lg font-semibold text-[#2E2E2E] mb-4 flex items-center">
+                    <Tag className="w-5 h-5 mr-2" />
+                    Technologies Used
+                  </h3>
+                  <div className="flex flex-wrap gap-3">
+                    {selectedProject.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="bg-[#FAF5F1] text-[#37695F] px-4 py-2 rounded-full font-medium border border-[#37695F]/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Results */}
-              <div className="mb-8">
-                <h3 className="text-lg font-semibold text-[#2E2E2E] mb-4">
-                  Key Results
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {selectedProject.results.map((result, index) => (
-                    <div
-                      key={index}
-                      className="bg-[#FAF5F1] p-4 rounded-xl border border-[#C38E70]/10"
-                    >
-                      <p className="text-[#2E2E2E] font-medium">{result}</p>
-                    </div>
-                  ))}
+              {selectedProject.category !== "Design" && (
+                <div className="mb-8">
+                  <h3 className="text-lg font-semibold text-[#2E2E2E] mb-4">
+                    Key Results
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {selectedProject.results.map((result, index) => (
+                      <div
+                        key={index}
+                        className="bg-[#FAF5F1] p-4 rounded-xl border border-[#C38E70]/10"
+                      >
+                        <p className="text-[#2E2E2E] font-medium">{result}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Buttons */}
-              <div className="flex space-x-4">
-                <motion.a
-                  href={selectedProject.liveUrl}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center space-x-2 gradient-bg text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <ExternalLink className="w-5 h-5" />
-                  <span>View Live</span>
-                </motion.a>
-                <motion.a
-                  href={selectedProject.githubUrl}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center space-x-2 bg-[#2E2E2E] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2E2E2E]/90 transition-all duration-300"
-                >
-                  <Github className="w-5 h-5" />
-                  <span>View Code</span>
-                </motion.a>
-              </div>
+              {selectedProject.category !== "Design" && (
+                <div className="flex space-x-4">
+                  <motion.a
+                    href={selectedProject.liveUrl}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center space-x-2 gradient-bg text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <ExternalLink className="w-5 h-5" />
+                    <span>View Live</span>
+                  </motion.a>
+                  <motion.a
+                    href={selectedProject.githubUrl}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center space-x-2 bg-[#2E2E2E] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2E2E2E]/90 transition-all duration-300"
+                  >
+                    <Github className="w-5 h-5" />
+                    <span>View Code</span>
+                  </motion.a>
+                </div>
+              )}
             </div>
           </motion.div>
         </motion.div>

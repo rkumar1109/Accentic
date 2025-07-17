@@ -25,17 +25,18 @@ export default function SwiperCarousel({ images }: SwiperCarouselProps) {
   return (
     <div className="w-full h-full max-w-4xl px-4 mb-8 mx-auto">
       <Swiper
-        effect="coverflow"
         grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={3}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
+        centeredSlides={false}
+        slidesPerView={1}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
         }}
+        spaceBetween={24}
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,

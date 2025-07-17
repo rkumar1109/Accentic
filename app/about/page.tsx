@@ -14,16 +14,25 @@ import {
   Github,
   Coffee,
   CheckCircle,
+  Instagram,
+  Facebook,
 } from "lucide-react";
 import Image from "next/image";
 
 const team = [
   {
-    name: "Sarah Johnson",
-    position: "CEO & Founder",
-    bio: "Visionary leader with 10+ years in digital strategy and business development.",
-    image: "/placeholder.svg?height=300&width=300",
-    social: { linkedin: "#", twitter: "#", github: "#" },
+    name: "Laxmi Narayan Panda",
+    position: "Founder",
+    bio: "Visionary leader with 3+years in digital strategy and business development.",
+    image: "/logos/miscImages/founder-image.jpg?height=300&width=300",
+    social: {
+      linkedin: "https://www.linkedin.com/in/laxminarayan-panda-63707b2aa/",
+      twitter: "#",
+      github: "#",
+      instagram:
+        "https://www.instagram.com/ln_panda.16?igsh=MTRjbGVvZzVoc2FmZQ==",
+      facebook: "https://www.facebook.com/share/16xx3a4Wuq/",
+    },
   },
   // {
   // 	name: "Michael Chen",
@@ -186,11 +195,11 @@ export default function About() {
             >
               <div className="aspect-video bg-gradient-to-br from-indigo/80 to-purple rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/logos/miscImages/our_story.png?height=400&width=600"
+                  src="/logos/miscImages/our-story.png?height=400&width=600"
                   alt="Our team"
                   width={600}
                   height={400}
-                  className="mix-blend-overlay opacity-90 rounded-2xl"
+                  className="rounded-2xl"
                 />
               </div>
               {/* Floating decorative elements inspired by the 3D image */}
@@ -204,7 +213,7 @@ export default function About() {
                 <div className="w-8 h-8 rounded-full bg-indigo/20 flex items-center justify-center">
                   <Coffee className="w-4 h-4 text-indigo" />
                 </div>
-                <span className="font-medium text-sm">Since 2025</span>
+                <span className="font-medium text-sm">Since 2024</span>
               </motion.div>
 
               <motion.div
@@ -214,7 +223,7 @@ export default function About() {
                 transition={{ delay: 0.6, duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <span className="text-2xl font-bold text-gradient">500+</span>
+                <span className="text-2xl font-bold text-gradient">120+</span>
                 <p className="text-xs text-darkBlue/70">Projects Completed</p>
               </motion.div>
             </motion.div>
@@ -232,13 +241,13 @@ export default function About() {
                 Our Story
               </h2>
               <p className="text-lg text-darkBlue/70 mb-6 leading-relaxed">
-                Founded in 2025, Accentic Solutions began as a small team of
+                Founded in 2024, Accentic Solutions began as a small team of
                 passionate developers and designers who believed that every
                 business deserves exceptional digital experiences.
               </p>
               <p className="text-lg text-darkBlue/70 mb-6 leading-relaxed">
                 Today, we've grown into a full-service digital agency that has
-                helped over 500 businesses transform their digital presence and
+                helped over 120 businesses transform their digital presence and
                 achieve remarkable growth.
               </p>
               <p className="text-lg text-darkBlue/70 mb-6 leading-relaxed">
@@ -349,6 +358,24 @@ export default function About() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-darkBlue/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4 flex justify-center space-x-3">
+                      {member.social.instagram && (
+                        <motion.a
+                          href={member.social.instagram}
+                          whileHover={{ scale: 1.1 }}
+                          className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
+                        >
+                          <Instagram className="w-4 h-4" />
+                        </motion.a>
+                      )}
+                      {member.social.facebook && (
+                        <motion.a
+                          href={member.social.facebook}
+                          whileHover={{ scale: 1.1 }}
+                          className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
+                        >
+                          <Facebook className="w-4 h-4" />
+                        </motion.a>
+                      )}
                       {member.social.linkedin && (
                         <motion.a
                           href={member.social.linkedin}
@@ -356,24 +383,6 @@ export default function About() {
                           className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
                         >
                           <Linkedin className="w-4 h-4" />
-                        </motion.a>
-                      )}
-                      {member.social.twitter && (
-                        <motion.a
-                          href={member.social.twitter}
-                          whileHover={{ scale: 1.1 }}
-                          className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
-                        >
-                          <Twitter className="w-4 h-4" />
-                        </motion.a>
-                      )}
-                      {member.social.github && (
-                        <motion.a
-                          href={member.social.github}
-                          whileHover={{ scale: 1.1 }}
-                          className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
-                        >
-                          <Github className="w-4 h-4" />
                         </motion.a>
                       )}
                     </div>

@@ -325,7 +325,7 @@ export default function Blog() {
                   className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10"
                 >
                   {/* Post Image */}
-                  <div className="relative h-32 overflow-hidden">
+                  <div className="relative h-62 overflow-hidden">
                     <img
                       src={post.image || "/placeholder.svg"}
                       alt={post.title}

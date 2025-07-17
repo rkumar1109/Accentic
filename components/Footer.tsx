@@ -30,16 +30,28 @@ export default function Footer() {
     ],
     legal: [
       { name: "Privacy Policy", href: "/privacy" },
-      { name: "Terms of Service", href: "/terms" },
-      { name: "Cookie Policy", href: "/cookies" },
+      // { name: "Terms of Service", href: "/terms" },
+      // { name: "Cookie Policy", href: "/cookies" },
     ],
   };
 
   const socialLinks = [
-    { icon: Facebook, href: "#", name: "Facebook" },
-    { icon: Twitter, href: "#", name: "Twitter" },
-    { icon: Instagram, href: "#", name: "Instagram" },
-    { icon: Linkedin, href: "#", name: "LinkedIn" },
+    {
+      icon: Facebook,
+      href: "https://www.facebook.com/share/19Mm8FVMqi/",
+      name: "Facebook",
+    },
+    // { icon: Twitter, href: "#", name: "Twitter" },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/accenticsolutions?igsh=bWhmeTk3bW83dTBn",
+      name: "Instagram",
+    },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/company/accentic-solutions/",
+      name: "LinkedIn",
+    },
   ];
 
   return (
@@ -51,7 +63,7 @@ export default function Footer() {
       className="bg-[#2E2E2E] text-white py-16"
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-12 mb-14">
           {/* Company Info */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -108,11 +120,12 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
+            className="md:ml-8"
           >
-            <h4 className="text-lg font-semibold mb-4 ml-36 text-[#C38E70]">
+            <h4 className="text-lg font-semibold mb-4 text-[#C38E70] text-center md:text-left">
               Company
             </h4>
-            <ul className="space-y-2 ml-36">
+            <ul className="space-y-2 text-center md:text-left">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -133,10 +146,10 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-4 ml-20 text-[#C38E70]">
+            <h4 className="text-lg font-semibold mb-4 text-[#C38E70] text-center md:text-left">
               Services
             </h4>
-            <ul className="space-y-2 ml-20">
+            <ul className="space-y-2 text-center md:text-left">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -157,10 +170,10 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-4 ml-20 text-[#C38E70]">
+            <h4 className="text-lg font-semibold mb-4 text-[#C38E70] text-center md:text-left">
               Legal
             </h4>
-            <ul className="space-y-2 mb-6 ml-20">
+            <ul className="space-y-2 mb-6 text-center md:text-left">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -174,13 +187,13 @@ export default function Footer() {
             </ul>
 
             {/* Social Links */}
-            <div className="flex space-x-4">
+            <div className="flex justify-center md:justify-start space-x-4">
               {socialLinks.map((social) => (
                 <motion.a
                   key={social.name}
                   href={social.href}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 bg-[#C38E70]/20 rounded-full flex items-center justify-center hover:bg-[#C38E70] transition-colors duration-200 ml-20"
+                  className="w-10 h-10 bg-[#C38E70]/20 rounded-full flex items-center justify-center hover:bg-[#C38E70] transition-colors duration-200"
                 >
                   <social.icon className="w-5 h-5" />
                 </motion.a>
