@@ -75,46 +75,64 @@ export const designItems = [
     id: 301,
     title: "Business Without Digital Strategy",
     image: "/logos/design/Business Without Digital Strategy.jpg",
+    client: "Accentic",
   },
   {
     id: 303,
-    title: "Holi Special Offer-1",
+    title: "Holi Special Offer",
     image: "/logos/design/Holi Special Offer-1.jpg",
+    client: "B21",
   },
   {
     id: 304,
-    title: "Home Delivery Available2-1",
+    title: "Home Delivery Available",
     image: "/logos/design/Home Delivery Available2-1.jpg",
+    client: "BEYRUT",
   },
-  { id: 305, title: "Bridal Makeup", image: "/logos/design/Bridal Makeup.jpg" },
+  {
+    id: 305,
+    title: "Bridal Makeup",
+    image: "/logos/design/Bridal Makeup.jpg",
+    client: "B21",
+  },
   {
     id: 306,
-    title: "Bridal Makeup 2",
+    title: "Bridal Makeup",
     image: "/logos/design/Bridal Makeup 2.jpg",
+    client: "B21",
   },
   {
     id: 307,
-    title: "Piercing Available2",
+    title: "Piercing Available",
     image: "/logos/design/Piercing Available2.jpg",
+    client: "B21",
   },
-  { id: 308, title: "Raja Offer-1", image: "/logos/design/Raja Offer-1.jpg" },
+  {
+    id: 308,
+    title: "Raja Offer",
+    image: "/logos/design/Raja Offer-1.jpg",
+    client: "B21",
+  },
   {
     id: 309,
-    title: "Piercing Available3",
+    title: "Piercing Available",
     image: "/logos/design/Piercing Available3.jpg",
+    client: "B21",
   },
   {
     id: 310,
-    title: "Summer Offer AD-1",
+    title: "Summer Offer",
     image: "/logos/design/Summer Offer AD-1.jpg",
+    client: "B21",
   },
   {
     id: 311,
-    title: "Raja B21 offer",
+    title: "Raja B21 Offer",
     image: "/logos/design/Raja B21 offer.jpg",
+    client: "B21",
   },
-  { id: 312, title: "b21-2", image: "/logos/design/b21-2.jpeg" },
-  { id: 313, title: "b21-1", image: "/logos/design/b21-1.jpeg" },
+  { id: 312, title: "B21", image: "/logos/design/b21-2.jpeg", client: "B21" },
+  { id: 313, title: "B21", image: "/logos/design/b21-1.jpeg", client: "B21" },
 ];
 
 // Full structure for projects array concat
@@ -126,7 +144,6 @@ export const designProjects = designItems.map((item) => ({
   liveUrl: "",
   githubUrl: "",
   date: "",
-  client: "B21",
   results: [],
 }));
 

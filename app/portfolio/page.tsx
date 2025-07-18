@@ -134,33 +134,117 @@ export default function Portfolio() {
                     : ""
                   }`}
                 >
-                  <div className="relative w-full h-full min-h-[320px] aspect-[4/5] flex items-stretch bg-white">
-                    {project.image &&
-                      project.image.startsWith("/logos/B21.png") && (
-                        <div className="absolute inset-0 bg-black/70 z-10 rounded-2xl pointer-events-none" />
+                  {/* Show details for Web Development projects */}
+                  {project.category === "Web Development" ?
+                    <article
+                      className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10 flex flex-col h-full cursor-pointer"
+                      onClick={() => setSelectedProject(project)}
+                    >
+                      {/* Project Image */}
+                      <div className="relative h-56 overflow-hidden">
+                        {project.image &&
+                          project.image.startsWith("/logos/B21.png") && (
+                            <div className="absolute inset-0 bg-black/70 z-10 rounded-2xl pointer-events-none" />
+                          )}
+                        <img
+                          src={project.image || "/placeholder.svg"}
+                          alt={project.title}
+                          className={`w-full ${project.image && project.image.startsWith("/logos/B21.png") ? "h-64 object-cover" : "h-full object-contain"} rounded-2xl${project.image && (project.image.startsWith("/logos/B21.png") || project.image.startsWith("/logos/CLSSYDINE.jpg")) ? " relative z-20 drop-shadow-lg" : ""}`}
+                        />
+                        <div className="absolute top-4 left-4 z-40">
+                          <span className="bg-[#C38E70] text-white px-3 py-1 rounded-full text-xs font-medium">
+                            {project.category}
+                          </span>
+                        </div>
+                        {project.liveUrl && (
+                          <div className="absolute top-4 right-4 z-40">
+                            <span className="bg-[#C38E70]/90 text-white px-3 py-1 rounded-full text-xs font-bold border border-[#C38E70]/30 shadow">
+                              Live
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                      {/* Client, Date Row */}
+                      <div className="flex items-center justify-between px-6 pt-3 pb-1 text-xs text-[#2E2E2E]/60">
+                        {project.client && (
+                          <div className="flex items-center space-x-1">
+                            <span>{project.client}</span>
+                          </div>
+                        )}
+                        <div className="flex items-center space-x-1">
+                          <Calendar className="w-4 h-4" />
+                          <span>{project.date}</span>
+                        </div>
+                      </div>
+                      {/* Project Content */}
+                      <div className="p-6 pt-2 flex-1 flex flex-col">
+                        <h2 className="text-xl font-bold text-[#2E2E2E] mb-3 group-hover:text-[#C38E70] transition-colors duration-300 line-clamp-2">
+                          {project.title}
+                        </h2>
+                        <p className="text-[#2E2E2E]/70 mb-4 leading-relaxed line-clamp-3">
+                          {project.description}
+                        </p>
+                        {/* Technologies as tags */}
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {project.technologies?.slice(0, 3).map((tech) => (
+                            <span
+                              key={tech}
+                              className="bg-[#FAF5F1] text-[#37695F] px-2 py-1 rounded-full text-xs font-medium border border-[#37695F]/20"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </article>
+                  : <motion.div
+                      key={project.id}
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      onClick={() => setSelectedProject(project)}
+                      className={`relative group w-full aspect-[4/5] bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10 cursor-pointer sm:w-full sm:max-w-sm sm:mx-auto sm:aspect-[4/5] md:w-full md:aspect-[4/5] ${
+                        (
+                          (activeCategory === "Marketing" &&
+                            project.category === "Marketing") ||
+                          (activeCategory === "Design" &&
+                            project.category === "Design")
+                        ) ?
+                          "p-0 shadow-2xl"
+                        : ""
+                      }`}
+                    >
+                      <div className="relative w-full h-full min-h-[320px] aspect-[4/5] flex items-stretch bg-white">
+                        {project.image &&
+                          project.image.startsWith("/logos/B21.png") && (
+                            <div className="absolute inset-0 bg-black/70 z-10 rounded-2xl pointer-events-none" />
+                          )}
+                        {project.image &&
+                          project.image.startsWith("/logos/CLSSYDINE.jpg") && (
+                            <div className="absolute inset-0 bg-white/70 z-10 rounded-2xl pointer-events-none" />
+                          )}
+                        <img
+                          src={project.image || "/placeholder.svg"}
+                          alt={project.title}
+                          className={`w-full ${project.image && project.image.startsWith("/logos/B21.png") ? "h-64 object-cover" : "h-full object-contain"} rounded-2xl${project.image && (project.image.startsWith("/logos/B21.png") || project.image.startsWith("/logos/CLSSYDINE.jpg")) ? " relative z-20 drop-shadow-lg" : ""}`}
+                        />
+                      </div>
+                      {/* Overlay gradient on hover for Marketing */}
+                      {((activeCategory === "Marketing" &&
+                        project.category === "Marketing") ||
+                        (activeCategory === "Design" &&
+                          project.category === "Design")) && (
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#C38E70]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl z-10" />
                       )}
-                    {project.image &&
-                      project.image.startsWith("/logos/CLSSYDINE.jpg") && (
-                        <div className="absolute inset-0 bg-white/70 z-10 rounded-2xl pointer-events-none" />
-                      )}
-                    <img
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      className={`w-full h-full object-contain rounded-2xl${project.image && (project.image.startsWith("/logos/B21.png") || project.image.startsWith("/logos/CLSSYDINE.jpg")) ? " relative z-20 drop-shadow-lg" : ""}`}
-                    />
-                  </div>
-                  {/* Overlay gradient on hover for Marketing */}
-                  {((activeCategory === "Marketing" &&
-                    project.category === "Marketing") ||
-                    (activeCategory === "Design" &&
-                      project.category === "Design")) && (
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#C38E70]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl z-10" />
-                  )}
-                  <div className="absolute top-4 left-4 z-20">
-                    <span className="bg-[#C38E70] text-white px-3 py-1 rounded-full text-xs font-medium">
-                      {project.category}
-                    </span>
-                  </div>
+                      <div className="absolute top-4 left-4 z-40">
+                        <span className="bg-[#C38E70] text-white px-3 py-1 rounded-full text-xs font-medium">
+                          {project.category}
+                        </span>
+                      </div>
+                    </motion.div>
+                  }
                 </motion.div>
               ))}
             </div>
@@ -192,14 +276,14 @@ export default function Portfolio() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
-            className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto scrollbar-hide overscroll-y-none"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header & Image */}
             <div className="relative">
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 w-10 h-10 bg-white/80 hover:bg-white text-[#2E2E2E] rounded-full flex items-center justify-center transition-colors duration-200 z-20 shadow-md border border-[#C38E70]/40 backdrop-blur"
+                className="absolute top-4 right-4 w-10 h-10 bg-white/80 hover:bg-white text-[#2E2E2E] rounded-full flex items-center justify-center transition-colors duration-200 z-50 shadow-md border border-[#C38E70]/40 backdrop-blur pointer-events-auto"
                 aria-label="Close"
               >
                 <svg
@@ -222,20 +306,25 @@ export default function Portfolio() {
                   selectedProject.image.startsWith("/logos/B21.png") && (
                     <div className="absolute inset-0 bg-black/70 z-10 rounded-2xl pointer-events-none" />
                   )}
-                {selectedProject.image &&
-                  selectedProject.image.startsWith("/logos/CLSSYDINE.jpg") && (
-                    <div className="absolute inset-0 bg-white/70 z-10 rounded-2xl pointer-events-none" />
-                  )}
                 <img
                   src={selectedProject.image || "/placeholder.svg"}
                   alt={selectedProject.title}
-                  className={`w-full h-64 object-cover rounded-2xl${selectedProject.image && (selectedProject.image.startsWith("/logos/B21.png") || selectedProject.image.startsWith("/logos/CLSSYDINE.jpg")) ? " relative z-20 drop-shadow-lg" : ""}`}
+                  className={`w-full ${selectedProject.image && selectedProject.image.startsWith("/logos/B21.png") ? "h-64 object-cover" : "h-64 object-cover"} rounded-2xl${selectedProject.image && (selectedProject.image.startsWith("/logos/B21.png") || selectedProject.image.startsWith("/logos/CLSSYDINE.jpg")) ? " relative z-20 drop-shadow-lg" : ""}`}
                 />
               </div>
             </div>
 
             {/* Modal Body */}
             <div className="p-8">
+              {/* Title and Client always shown */}
+              <h2 className="text-3xl font-bold text-[#2E2E2E] mb-2">
+                {selectedProject.title}
+              </h2>
+              {selectedProject.client && (
+                <p className="text-[#C38E70] font-medium mb-6">
+                  Client: {selectedProject.client}
+                </p>
+              )}
               {/* Meta */}
               <div className="flex items-center justify-between mb-4">
                 <span className="bg-[#C38E70] text-white px-3 py-1 rounded-full text-sm font-medium">
@@ -246,15 +335,6 @@ export default function Portfolio() {
                   <span>{selectedProject.date}</span>
                 </div>
               </div>
-
-              <h2 className="text-3xl font-bold text-[#2E2E2E] mb-2">
-                {selectedProject.title}
-              </h2>
-              {selectedProject.client && (
-                <p className="text-[#C38E70] font-medium mb-6">
-                  Client: {selectedProject.client}
-                </p>
-              )}
 
               <p className="text-[#2E2E2E]/70 mb-8 leading-relaxed text-lg">
                 {selectedProject.description}
