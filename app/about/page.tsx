@@ -336,7 +336,7 @@ export default function About() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex justify-center">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -345,8 +345,7 @@ export default function About() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, y: -5 }}
-                // className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-indigo/10"
-                className="group bg-white w-[850px] md:w-[350px] h-[600px] mx-auto ml-[160%] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-indigo/10"
+                className="group bg-white w-[850px] md:w-[350px] h-[600px] mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-indigo/10"
               >
                 <div className="relative h-[400px] overflow-hidden">
                   <Image
