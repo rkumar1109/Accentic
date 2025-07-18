@@ -10,7 +10,7 @@ import SwiperCarousel from "./Carousel";
 import VidCarousel from "./VidCarousel";
 import {
   projects,
-  galleryProjects,
+  galleryImages,
   portfolioVideos,
   categories,
   // marketingProjects, // not used directly
@@ -98,11 +98,11 @@ export default function Portfolio() {
         <div className="container mx-auto px-4 md:px-6">
           {activeCategory === "Gallery" && (
             <>
-              <h3 className="text-2xl font-bold text-[#2E2E2E] text-center mb-8">
+              {/* <h3 className="text-2xl font-bold text-[#2E2E2E] text-center mb-8">
                 Images
-              </h3>
+              </h3> */}
               <SwiperCarousel
-                images={galleryProjects.map((img) => ({
+                images={galleryImages.map((img) => ({
                   id: img.id,
                   label: img.title,
                   imgURL: img.image,
@@ -168,14 +168,14 @@ export default function Portfolio() {
         </div>
 
         {/* Video Portfolio Section */}
-        {activeCategory === "Gallery" && (
+        {/* {activeCategory === "Gallery" && (
           <div className="mt-20">
             <h3 className="text-2xl font-bold text-[#2E2E2E] text-center mb-8">
               Videos
             </h3>
             <VidCarousel videos={portfolioVideos} />
           </div>
-        )}
+        )} */}
       </section>
 
       {/* Modal */}

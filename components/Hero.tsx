@@ -185,7 +185,7 @@ export default function Hero() {
               className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8 text-sm"
             >
               {[
-                "500+ Projects",
+                "120+ Projects",
                 "98% Satisfaction",
                 "24/7 Support",
                 "ROI Guaranteed",

@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const stats = [
   {
-    number: 500,
+    number: 120,
     suffix: "+",
     label: "Projects Completed",
     description: "Successfully delivered across various industries",
@@ -19,13 +19,13 @@ const stats = [
     description: "Consistently exceeding client expectations",
   },
   {
-    number: 50,
+    number: 12,
     suffix: "+",
     label: "Team Members",
     description: "Skilled professionals dedicated to excellence",
   },
   {
-    number: 5,
+    number: 2,
     suffix: "+",
     label: "Years Experience",
     description: "Proven track record in digital innovation",

@@ -232,10 +232,10 @@ export default function Services() {
                   </ul>
 
                   {/* Price */}
-                  <div className="flex items-center justify-between mt-auto">
+                  <div className="flex items-center justify-center mt-auto">
                     <Link
                       href="/contact"
-                      className="ml-8 sm:ml-16 px-4 py-2 rounded-full bg-gradient-to-r from-[#C38E70] to-[#37695F] text-white font-semibold shadow-md hover:from-[#A76D4E] hover:to-[#37695F] hover:scale-105 transition-all duration-200 text-base sm:text-lg focus:outline-none z-[1]"
+                      className="px-4 py-2 rounded-full bg-gradient-to-r from-[#C38E70] to-[#37695F] text-white font-semibold shadow-md hover:from-[#A76D4E] hover:to-[#37695F] hover:scale-105 transition-all duration-200 text-base sm:text-lg focus:outline-none z-[1] w-18 max-w-xs text-center"
                     >
                       {service.price}
                     </Link>
@@ -269,13 +269,15 @@ export default function Services() {
               Let's discuss your project and create something amazing together.
               Get a free consultation and custom quote today.
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="gradient-bg text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Get Free Consultation
-            </motion.button>
+            <Link href="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="gradient-bg text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Get Free Consultation
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
       </section>

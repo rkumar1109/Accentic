@@ -41,7 +41,11 @@ export default function Footer() {
       href: "https://www.facebook.com/share/19Mm8FVMqi/",
       name: "Facebook",
     },
-    // { icon: Twitter, href: "#", name: "Twitter" },
+    {
+      icon: Twitter,
+      href: "https://x.com/AccenticS17167?t=6217zIE6RTfP9eIuUs53RQ&s=09",
+      name: "Twitter",
+    },
     {
       icon: Instagram,
       href: "https://www.instagram.com/accenticsolutions?igsh=bWhmeTk3bW83dTBn",

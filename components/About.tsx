@@ -18,7 +18,7 @@ const highlights = [
     icon: Users,
     title: "Expert Team",
     description:
-      "50+ skilled professionals with diverse expertise and proven track records",
+      "12+ skilled professionals with diverse expertise and proven track records",
   },
   {
     icon: Target,
@@ -72,7 +72,7 @@ export default function About() {
             </h2>
 
             <p className="text-lg text-darkBlue/70 mb-8 leading-relaxed">
-              Founded in 2018, Accentic Digital Solutions has been at the
+              Founded in 2024, Accentic Digital Solutions has been at the
               forefront of digital innovation, helping businesses of all sizes
               achieve their goals through strategic digital transformation. Our
               passion for creativity combined with technical expertise makes us
