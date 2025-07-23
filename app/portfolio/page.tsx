@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { ExternalLink, Github, Calendar, Tag } from "lucide-react";
 import SwiperCarousel from "./Carousel";
-import VidCarousel from "./VidCarousel";
+// import VidCarousel from "./VidCarousel";
 import {
   projects,
   galleryImages,
@@ -35,7 +35,7 @@ export default function Portfolio() {
       projects.filter((project) =>
         ["Web Development", "Marketing", "Design"].includes(project.category)
       )
-    : projects.filter((project) => project.category === activeCategory);
+      : projects.filter((project) => project.category === activeCategory);
 
   return (
     <motion.div
@@ -80,11 +80,10 @@ export default function Portfolio() {
                 onClick={() => setActiveCategory(category)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activeCategory === category ?
-                    "gradient-bg text-white shadow-lg"
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeCategory === category ?
+                  "gradient-bg text-white shadow-lg"
                   : "bg-[#FAF5F1] text-[#2E2E2E] hover:bg-[#C38E70]/10 border border-[#C38E70]/20"
-                }`}
+                  }`}
               >
                 {category}
               </motion.button>
@@ -123,16 +122,15 @@ export default function Portfolio() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.02, y: -5 }}
                   onClick={() => setSelectedProject(project)}
-                  className={`relative group w-full aspect-[4/5] bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10 cursor-pointer sm:w-full sm:max-w-sm sm:mx-auto sm:aspect-[4/5] md:w-full md:aspect-[4/5] ${
-                    (
-                      (activeCategory === "Marketing" &&
-                        project.category === "Marketing") ||
-                      (activeCategory === "Design" &&
-                        project.category === "Design")
-                    ) ?
-                      "p-0 shadow-2xl"
+                  className={`relative group w-full aspect-[4/5] bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10 cursor-pointer sm:w-full sm:max-w-sm sm:mx-auto sm:aspect-[4/5] md:w-full md:aspect-[4/5] ${(
+                    (activeCategory === "Marketing" &&
+                      project.category === "Marketing") ||
+                    (activeCategory === "Design" &&
+                      project.category === "Design")
+                  ) ?
+                    "p-0 shadow-2xl"
                     : ""
-                  }`}
+                    }`}
                 >
                   {/* Show details for Web Development projects */}
                   {project.category === "Web Development" ?
@@ -142,14 +140,15 @@ export default function Portfolio() {
                     >
                       {/* Project Image */}
                       <div className="relative h-56 overflow-hidden">
-                        {project.image &&
+                        {/* {project.image &&
                           project.image.startsWith("/logos/B21.png") && (
                             <div className="absolute inset-0 bg-black/70 z-10 rounded-2xl pointer-events-none" />
-                          )}
+                          )} */}
                         <img
                           src={project.image || "/placeholder.svg"}
                           alt={project.title}
-                          className={`w-full ${project.image && project.image.startsWith("/logos/B21.png") ? "h-64 object-cover" : "h-full object-contain"} rounded-2xl${project.image && (project.image.startsWith("/logos/B21.png") || project.image.startsWith("/logos/CLSSYDINE.jpg")) ? " relative z-20 drop-shadow-lg" : ""}`}
+                          // className={`w-full ${project.image && project.image.startsWith("/logos/B21.png") ? "h-fit object-fit" : "h-full object-contain"} rounded-2xl${project.image && (project.image.startsWith("/logos/B21.png") || project.image.startsWith("/logos/Beyrut.jpg")) ? " relative z-20 drop-shadow-lg" : ""}`
+                          className={"w-full h-full object-contain rounded-2xl"}
                         />
                         <div className="absolute top-4 left-4 z-40">
                           <span className="bg-[#C38E70] text-white px-3 py-1 rounded-full text-xs font-medium">
@@ -197,7 +196,7 @@ export default function Portfolio() {
                         </div>
                       </div>
                     </article>
-                  : <motion.div
+                    : <motion.div
                       key={project.id}
                       initial={{ opacity: 0, y: 50 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -205,30 +204,29 @@ export default function Portfolio() {
                       viewport={{ once: true }}
                       whileHover={{ scale: 1.02, y: -5 }}
                       onClick={() => setSelectedProject(project)}
-                      className={`relative group w-full aspect-[4/5] bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10 cursor-pointer sm:w-full sm:max-w-sm sm:mx-auto sm:aspect-[4/5] md:w-full md:aspect-[4/5] ${
-                        (
-                          (activeCategory === "Marketing" &&
-                            project.category === "Marketing") ||
-                          (activeCategory === "Design" &&
-                            project.category === "Design")
-                        ) ?
-                          "p-0 shadow-2xl"
+                      className={`relative group w-full aspect-[4/5] bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#C38E70]/10 cursor-pointer sm:w-full sm:max-w-sm sm:mx-auto sm:aspect-[4/5] md:w-full md:aspect-[4/5] ${(
+                        (activeCategory === "Marketing" &&
+                          project.category === "Marketing") ||
+                        (activeCategory === "Design" &&
+                          project.category === "Design")
+                      ) ?
+                        "p-0 shadow-2xl"
                         : ""
-                      }`}
+                        }`}
                     >
                       <div className="relative w-full h-full min-h-[320px] aspect-[4/5] flex items-stretch bg-white">
                         {project.image &&
-                          project.image.startsWith("/logos/B21.png") && (
-                            <div className="absolute inset-0 bg-black/70 z-10 rounded-2xl pointer-events-none" />
+                          project.image.startsWith("/logos/B21.png") && (<div className="absolute inset-0 z-10 rounded-2xl pointer-events-none" />
                           )}
                         {project.image &&
-                          project.image.startsWith("/logos/CLSSYDINE.jpg") && (
+                          project.image.startsWith("/logos/Beyrut.jpg") && (
                             <div className="absolute inset-0 bg-white/70 z-10 rounded-2xl pointer-events-none" />
                           )}
                         <img
                           src={project.image || "/placeholder.svg"}
                           alt={project.title}
-                          className={`w-full ${project.image && project.image.startsWith("/logos/B21.png") ? "h-64 object-cover" : "h-full object-contain"} rounded-2xl${project.image && (project.image.startsWith("/logos/B21.png") || project.image.startsWith("/logos/CLSSYDINE.jpg")) ? " relative z-20 drop-shadow-lg" : ""}`}
+                          // className={`w-full ${project.image && project.image.startsWith("/logos/B21.png") ? "h-64 object-cover" : "h-full object-contain"} rounded-2xl${project.image && (project.image.startsWith("/logos/B21.png") || project.image.startsWith("/logos/Beyrut.jpg")) ? " relative z-20 drop-shadow-lg" : ""}`}
+                          className={"w-full h-full object-contain rounded-2xl"}
                         />
                       </div>
                       {/* Overlay gradient on hover for Marketing */}
@@ -236,8 +234,8 @@ export default function Portfolio() {
                         project.category === "Marketing") ||
                         (activeCategory === "Design" &&
                           project.category === "Design")) && (
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#C38E70]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl z-10" />
-                      )}
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#C38E70]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl z-10" />
+                        )}
                       <div className="absolute top-4 left-4 z-40">
                         <span className="bg-[#C38E70] text-white px-3 py-1 rounded-full text-xs font-medium">
                           {project.category}
@@ -309,7 +307,9 @@ export default function Portfolio() {
                 <img
                   src={selectedProject.image || "/placeholder.svg"}
                   alt={selectedProject.title}
-                  className={`w-full ${selectedProject.image && selectedProject.image.startsWith("/logos/B21.png") ? "h-64 object-cover" : "h-64 object-cover"} rounded-2xl${selectedProject.image && (selectedProject.image.startsWith("/logos/B21.png") || selectedProject.image.startsWith("/logos/CLSSYDINE.jpg")) ? " relative z-20 drop-shadow-lg" : ""}`}
+                  // className={`w-full ${selectedProject.image && selectedProject.image.startsWith("/logos/B21.png") ? "h-64 object-cover" : "h-64 object-cover"} rounded-2xl${selectedProject.image && (selectedProject.image.startsWith("/logos/B21.png") || selectedProject.image.startsWith("/logos/Beyrut.jpg")) ? " relative z-20 drop-shadow-lg" : ""}`
+                  className={"w-full h-64 object-cover rounded-2xl"
+                  }
                 />
               </div>
             </div>
@@ -391,7 +391,7 @@ export default function Portfolio() {
                     <ExternalLink className="w-5 h-5" />
                     <span>View Live</span>
                   </motion.a>
-                  <motion.a
+                  {/* <motion.a
                     href={selectedProject.githubUrl}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -399,7 +399,7 @@ export default function Portfolio() {
                   >
                     <Github className="w-5 h-5" />
                     <span>View Code</span>
-                  </motion.a>
+                  </motion.a> */}
                 </div>
               )}
             </div>
