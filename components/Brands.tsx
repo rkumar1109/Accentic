@@ -5,7 +5,6 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 
 const brands = [
-  { name: "CLSSYDINE", logo: "/logos/CLSSYDINE.jpg" },
   { name: "B21", logo: "/logos/B21.png", bg: true },
   { name: "Amedore", logo: "/logos/Amedore.jpg" },
   { name: "Inkstories", logo: "/logos/inkstories logo-02.png" },
@@ -56,19 +55,19 @@ export default function Brands() {
                       className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
-                : brand.logo === "/logos/inkstories logo-02.png" ?
-                  <div className="w-28 h-12 flex items-center justify-center mx-auto">
-                    <img
+                  : brand.logo === "/logos/inkstories logo-02.png" ?
+                    <div className="w-28 h-12 flex items-center justify-center mx-auto">
+                      <img
+                        src={brand.logo || "/placeholder.svg"}
+                        alt={brand.name}
+                        className="object-contain w-full h-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                      />
+                    </div>
+                    : <img
                       src={brand.logo || "/placeholder.svg"}
                       alt={brand.name}
-                      className="object-contain w-full h-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                      className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                     />
-                  </div>
-                : <img
-                    src={brand.logo || "/placeholder.svg"}
-                    alt={brand.name}
-                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                  />
                 }
               </motion.div>
             ))}
